@@ -26,9 +26,8 @@ export const beehiiv = {
 export const profile = {
   name: "Drew",
   wordmark: "drew",
-  // TODO: drop a square headshot at public/avatar.jpg, then set this to "/avatar.jpg".
-  // Until it's set, the monogram below renders instead.
-  avatarSrc: null as string | null,
+  // Square crop of drew_headshot.JPG, optimized. Regenerate if the photo changes.
+  avatarSrc: "/avatar.jpg" as string | null,
   monogram: "D",
   navCta: "Join free",
 };
@@ -40,6 +39,7 @@ export const home = {
   byline: "CS @ University of Oregon · building AI infra at PayPal",
   subhead:
     "For people who want to keep up with AI without reading twenty newsletters. What actually happened this week, the tools worth opening, and an honest take on both — from someone building with them every day.",
+  heroCta: "Join the newsletter →",
   subscribeHeading: "Join the newsletter",
   subscribeSupport: "Free, one email a week, unsubscribe anytime.",
   // TODO: real reader count and send day

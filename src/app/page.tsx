@@ -2,7 +2,7 @@ import { Avatar } from "@/components/Avatar";
 import { BeehiivEmbed } from "@/components/BeehiivEmbed";
 import { Letter } from "@/components/Letter";
 import { SocialIcon } from "@/components/SocialIcons";
-import { Eyebrow, Section } from "@/components/ui";
+import { Button, Eyebrow, Section } from "@/components/ui";
 import { home, socials } from "@/lib/site";
 
 export default function HomePage() {
@@ -23,6 +23,10 @@ export default function HomePage() {
           <p className="mt-6 max-w-[52ch] leading-relaxed text-muted">
             {home.subhead}
           </p>
+
+          <div className="mt-8">
+            <Button href="#subscribe">{home.heroCta}</Button>
+          </div>
 
           <ul className="mt-8 flex items-center gap-3">
             {socials.map((social) => (

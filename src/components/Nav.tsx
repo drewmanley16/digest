@@ -44,11 +44,11 @@ export function Nav() {
             })}
           </ul>
 
-          {/* The hero and newsletter page both carry the form, so on mobile
-              this would just be a third route to the same place. */}
+          {/* Hidden on the narrowest screens only, where it would crowd the
+              links — the hero form sits right there anyway. */}
           <Link
             href="/newsletter#subscribe"
-            className="hidden rounded-sm bg-accent px-4 py-2 font-mono text-xs tracking-wide text-bg uppercase transition-colors hover:bg-accent/85 lg:inline-block"
+            className="hidden rounded-sm bg-accent px-3.5 py-2 font-mono text-xs tracking-wide text-bg uppercase transition-colors hover:bg-accent/85 sm:inline-block"
           >
             {profile.navCta}
           </Link>

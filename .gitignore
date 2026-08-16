@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .gstack/
+
+# Raw source photo — the optimized crop is public/avatar.jpg
+/public/drew_headshot.JPG
