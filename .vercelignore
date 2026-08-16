@@ -1,0 +1,3 @@
+# The 10MB source photo — only the optimized public/avatar.jpg should ship.
+# git ignores it too, but the Vercel CLI uploads from disk, so it needs its own rule.
+public/drew_headshot.JPG
