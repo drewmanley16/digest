@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import { BeehiivEmbed } from "@/components/BeehiivEmbed";
+import { Faq } from "@/components/Faq";
+import { Eyebrow, Hero, Section } from "@/components/ui";
+import { newsletter } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "digest.md — the newsletter",
+  description: newsletter.subhead,
+};
+
+export default function NewsletterPage() {
+  return (
+    <main className="fade-in flex-1">
+      <Hero>
+        <Eyebrow>{newsletter.eyebrow}</Eyebrow>
+
+        <h1 className="mt-5 font-mono text-4xl tracking-tight text-fg sm:text-5xl">
+          {newsletter.headline}
+        </h1>
+
+        <p className="mt-6 max-w-[60ch] text-base leading-relaxed text-muted sm:text-lg">
+          {newsletter.subhead}
+        </p>
+
+        <p className="mt-4 font-mono text-sm text-muted">{newsletter.byline}</p>
+
+        <div id="subscribe" className="mt-10 scroll-mt-24">
+          <BeehiivEmbed />
+          <p className="mt-4 font-mono text-sm text-muted">
+            {newsletter.subscriberCount}
+          </p>
+        </div>
+      </Hero>
+
+      <Section>
+        <p className="font-mono text-sm text-muted">{newsletter.whyLabel}</p>
+
+        <div className="mt-6 max-w-[65ch] space-y-5 leading-relaxed text-fg">
+          {newsletter.whyParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <h2 className="font-mono text-xl tracking-tight text-fg">Questions</h2>
+
+        <div className="mt-6">
+          <Faq items={newsletter.faq} />
+        </div>
+      </Section>
+    </main>
+  );
+}
