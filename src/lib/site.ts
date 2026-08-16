@@ -109,41 +109,143 @@ export const partnerships = {
   // TODO: finalize
   subhead:
     "I make short-form video and write a weekly newsletter about AI tools and news. The audience is mostly engineers, students, and early-career technical people who try new tools first.",
-  // TODO: real numbers
-  stats: [
-    { value: "XX.XK", label: "Instagram followers" },
-    { value: "X.X%", label: "Engagement rate" },
-    { value: "XXXK", label: "Monthly impressions" },
-    { value: "X,XXX", label: "Newsletter subscribers" },
+  // ALL FIGURES BELOW ARE PLACEHOLDERS. Fill from your own Instagram/LinkedIn
+  // analytics and Beehiiv dashboard before sending this page to any brand.
+  profile: {
+    categories: ["AI & Tech", "Developer Tools", "Education"],
+    totalFollowersLabel: "Total followers",
+    totalFollowers: "—",
+    platforms: [
+      { icon: "instagram", label: "Instagram", value: "—" },
+      { icon: "linkedin", label: "LinkedIn", value: "—" },
+      { icon: "tiktok", label: "TikTok", value: "—" },
+    ],
+    aboutLabel: "About me",
+    about:
+      "I'm Drew, a CS student at the University of Oregon building AI infrastructure at PayPal. I make short-form video about AI tools and write digest.md, a weekly newsletter for people who build with this stuff rather than just read about it.",
+  },
+
+  // Drop logo files in public/brands/ and point `logo` at them.
+  // With logo: null the name renders as a text tile instead.
+  brandsLabel: "Brand partners",
+  brands: [
+    { name: "Higgsfield AI", logo: null as string | null },
+    // TODO: second company — name + public/brands/<file>.png
+    { name: "TODO: company 2", logo: null as string | null },
   ],
-  // TODO: add brands — empty array renders an empty state
-  brands: [] as string[],
+
+  // One block per platform, same card grid for each.
+  platformStats: [
+    {
+      name: "Instagram",
+      icon: "instagram",
+      handle: "@TODO",
+      note: "Last 30 days",
+      metrics: [
+        { label: "Followers", value: "—" },
+        { label: "Engagement", value: "—" },
+        { label: "Follower engagement", value: "—" },
+        { label: "Total impressions", value: "—" },
+        { label: "30 day reach", value: "—" },
+        { label: "Avg reels views", value: "—" },
+      ],
+    },
+    {
+      name: "LinkedIn",
+      icon: "linkedin",
+      handle: "@TODO",
+      note: "Last 30 days",
+      metrics: [
+        { label: "Followers", value: "—" },
+        { label: "Engagement", value: "—" },
+        { label: "Impressions", value: "—" },
+        { label: "Total posts", value: "—" },
+        { label: "Avg reactions", value: "—" },
+        { label: "Avg comments", value: "—" },
+      ],
+    },
+  ],
+
+  demographics: {
+    label: "Audience demographics",
+    ageLabel: "Age",
+    // TODO: real split from Instagram insights
+    age: [
+      { range: "13-17", percent: 0 },
+      { range: "18-24", percent: 0 },
+      { range: "25-34", percent: 0 },
+      { range: "35-44", percent: 0 },
+      { range: "45-54", percent: 0 },
+    ],
+    genderLabel: "Gender",
+    gender: [
+      { label: "Male", percent: 0 },
+      { label: "Female", percent: 0 },
+    ],
+  },
+
+  // TODO: edit to match what you actually sell
   offerings: [
     {
+      icon: "video",
       title: "Sponsored video package",
-      body: "A dedicated short-form video across Instagram and TikTok, scripted and edited by me to fit the feed rather than read like an ad.",
+      body: "One reel cross-posted to Instagram, TikTok, and YouTube Shorts. Story-driven, built for the feed rather than read like an ad.",
     },
     {
+      icon: "link",
       title: "Link in bio placement",
-      body: "Your link featured in my bio for the duration of the campaign, driving traffic from every post in that window.",
+      body: "Dedicated link in bio across all platforms for one full week.",
     },
     {
+      icon: "megaphone",
+      title: "Paid ad usage",
+      body: "Meta whitelisting and TikTok Spark Ads. Run my content as paid ads from your brand's account.",
+    },
+    {
+      icon: "bolt",
+      title: "Automated DM integration",
+      body: "A ManyChat flow that sends followers straight to your product, landing page, or offer.",
+    },
+    {
+      icon: "mail",
       title: "Newsletter feature",
-      body: "A dedicated section in digest.md with my honest take on your product, written in the same voice as the rest of the issue.",
+      body: "A dedicated feature in digest.md, sent weekly to a tech-savvy audience with high open rates.",
     },
     {
+      icon: "file",
       title: "Raw video file",
-      body: "Full usage rights to the raw footage and final cut, so you can repurpose it for paid ads or your own channels.",
+      body: "Full usage rights to the raw footage and final cut, to repurpose across your own channels and ads.",
     },
   ],
-  // TODO: confirm these
+  reasonsLabel: "Why brands work with me",
+  // TODO: confirm — the numeric claims must match the stats above
   reasons: [
-    "Technical audience that actually installs and tries new tools.",
+    "Engaged audience across Instagram, TikTok, and LinkedIn.",
+    "Audience deeply engaged in AI and developer tools.",
     "I only take partnerships for products I'd use myself.",
-    "Scripting, filming, and editing handled end to end — no lift on your side.",
-    "Fast turnaround, usually under a week from brief to delivery.",
+    "Scripting, filming, and editing handled end to end.",
+    "Fast turnaround and professional delivery.",
     "Clear reporting on reach, engagement, and clicks after every campaign.",
-    "Honest takes, which is exactly why the audience trusts a recommendation.",
+  ],
+  faqLabel: "Questions brands ask",
+  // TODO: confirm rates, turnaround, and exclusivity terms before sending to anyone
+  faq: [
+    {
+      q: "What does a partnership cost?",
+      a: "It depends on the deliverables and usage rights. Send me what you have in mind and I'll come back with a flat rate — no retainers, no hidden fees.",
+    },
+    {
+      q: "How long does turnaround take?",
+      a: "Usually under a week from approved brief to delivered video. Rush timelines are possible if you tell me up front.",
+    },
+    {
+      q: "Do I get approval before it goes live?",
+      a: "Yes. You see the script before I film and the cut before it posts. One round of revisions is included.",
+    },
+    {
+      q: "Will you promote anything?",
+      a: "No. I only take partnerships for products I'd actually use, because a recommendation my audience doesn't trust isn't worth anything to either of us.",
+    },
   ],
   closing: {
     headline: "Let's work together",
