@@ -42,8 +42,15 @@ export default function HomePage() {
 
           <div
             id="subscribe"
-            className="mt-10 flex w-full scroll-mt-24 flex-col items-center"
+            className="mt-12 flex w-full scroll-mt-24 flex-col items-center border-t border-line pt-12"
           >
+            <h2 className="font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+              {home.subscribeHeading}
+            </h2>
+            <p className="mt-3 mb-8 text-sm text-muted">
+              {home.subscribeSupport}
+            </p>
+
             <BeehiivEmbed />
             <p className="mt-4 flex items-center gap-2 font-mono text-xs tracking-wide text-muted uppercase">
               <span

@@ -61,7 +61,7 @@ body {
    here is how the iframe sits in the layout. */
 .beehiiv-embed {
   width: 100%;
-  max-width: 28rem;
+  max-width: 34rem;
   min-height: 84px;
 }
 

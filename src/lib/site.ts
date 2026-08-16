@@ -40,6 +40,8 @@ export const home = {
   byline: "CS @ University of Oregon · building AI infra at PayPal",
   subhead:
     "For people who want to keep up with AI without reading twenty newsletters. What actually happened this week, the tools worth opening, and an honest take on both — from someone building with them every day.",
+  subscribeHeading: "Join the newsletter",
+  subscribeSupport: "Free, one email a week, unsubscribe anytime.",
   // TODO: real reader count and send day
   statLine: "Join X readers every [day]",
   letter: {
