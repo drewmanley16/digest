@@ -129,9 +129,9 @@ export const partnerships = {
   // With logo: null the name renders as a text tile instead.
   brandsLabel: "Brand partners",
   brands: [
+    // TODO: add logo files — public/brands/higgsfield.png, public/brands/devmaxx.png
     { name: "Higgsfield AI", logo: null as string | null },
-    // TODO: second company — name + public/brands/<file>.png
-    { name: "TODO: company 2", logo: null as string | null },
+    { name: "Devmaxx", logo: null as string | null },
   ],
 
   // One block per platform, same card grid for each.
@@ -224,7 +224,7 @@ export const partnerships = {
     "Audience deeply engaged in AI and developer tools.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
-    "Fast turnaround and professional delivery.",
+    "Trusted by AI startups like Higgsfield AI and Devmaxx.",
     "Clear reporting on reach, engagement, and clicks after every campaign.",
   ],
   faqLabel: "Questions brands ask",
