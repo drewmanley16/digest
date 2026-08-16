@@ -9,13 +9,13 @@ export const nav = [
   { href: "/partnerships", label: "Partnerships" },
 ] as const;
 
-// TODO: real profile URLs
+// TODO: real profile URLs. `icon` maps to a glyph in components/SocialIcons.tsx.
 export const socials = [
-  { label: "Instagram", href: "https://instagram.com/" },
-  { label: "TikTok", href: "https://tiktok.com/" },
-  { label: "LinkedIn", href: "https://linkedin.com/" },
-  { label: "X", href: "https://x.com/" },
-];
+  { label: "Instagram", href: "https://instagram.com/", icon: "instagram" },
+  { label: "TikTok", href: "https://tiktok.com/", icon: "tiktok" },
+  { label: "LinkedIn", href: "https://linkedin.com/", icon: "linkedin" },
+  { label: "X", href: "https://x.com/", icon: "x" },
+] as const;
 
 export const beehiiv = {
   formId: "3c1ed599-bf7b-4214-9cdc-75dd38816315",
@@ -23,18 +23,45 @@ export const beehiiv = {
   attributionSrc: "https://subscribe-forms.beehiiv.com/attribution.js",
 };
 
+export const profile = {
+  name: "Drew",
+  wordmark: "drew",
+  // TODO: drop a square headshot at public/avatar.jpg, then set this to "/avatar.jpg".
+  // Until it's set, the monogram below renders instead.
+  avatarSrc: null as string | null,
+  monogram: "D",
+  navCta: "Join free",
+};
+
 export const home = {
   eyebrow: "$ whoami",
-  headline: "Hey, I'm Drew.",
+  // The newsletter, framed as yours — not a standalone product.
+  headline: "digest.md by Drew",
+  byline: "CS @ University of Oregon · building AI infra at PayPal",
   subhead:
-    "I write digest.md — a weekly newsletter on AI news, tools worth trying, and my take on both. I'm a CS junior building AI infra at PayPal and shipping hackathon projects most weekends.",
-  // TODO: real reader count and cadence
-  statLine: "X readers every [day]",
-  section: {
-    label: "the newsletter",
-    headline: "One email a week. AI news, tools, and what I actually think.",
-    body: "No link dumps, no hype cycle. Just what happened this week in AI, the tools that are actually worth your time, and an honest read on why any of it matters.",
-    cta: "Join Free",
+    "For people who want to keep up with AI without reading twenty newsletters. What actually happened this week, the tools worth opening, and an honest take on both — from someone building with them every day.",
+  // TODO: real reader count and send day
+  statLine: "Join X readers every [day]",
+  letter: {
+    heading: "A note to the reader",
+    to: "YOU",
+    // TODO: real from-address
+    from: "DREW <HELLO@DIGEST.MD>",
+    re: "WHY I WRITE THIS",
+    // TODO: replace with your own words — this is the most personal thing on the site
+    paragraphs: [
+      "I got tired of reading about AI and never actually building anything with it. Every newsletter was either a wall of links or someone telling me the world was about to end. Neither helped me ship anything.",
+      "So I started writing the email I wanted to get. I'm a CS junior at the University of Oregon, I work on AI infrastructure at PayPal, and I spend most weekends at hackathons putting these tools through their paces. When something is good, I've usually already broken it in three ways by the time I write about it.",
+      "That's the whole angle. Not an analyst take, not a hype take — a builder's take. If a tool is overhyped I'll say so, and if I was wrong last week I'll say that too.",
+      "It's free, it comes once a week, and it takes about four minutes to read. If that sounds useful, I'd love to have you.",
+    ],
+    signoff: "— Drew",
+    stamp: {
+      top: "SENT WITH LOVE",
+      initials: "DM",
+      // TODO: real send day + time
+      bottom: "MONDAY 06:00",
+    },
   },
 };
 
