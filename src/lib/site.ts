@@ -129,9 +129,8 @@ export const partnerships = {
   // With logo: null the name renders as a text tile instead.
   brandsLabel: "Brand partners",
   brands: [
-    // TODO: add logo files — public/brands/higgsfield.png, public/brands/devmaxx.png
-    { name: "Higgsfield AI", logo: null as string | null },
-    { name: "Devmaxx", logo: null as string | null },
+    { name: "Higgsfield AI", logo: "/brands/higgsfield.png" as string | null },
+    { name: "Devmaxx", logo: "/brands/devmaxx.png" as string | null },
   ],
 
   // One block per platform, same card grid for each.
