@@ -56,13 +56,6 @@ export default function HomePage() {
             </p>
 
             <BeehiivEmbed />
-            <p className="mt-4 flex items-center gap-2 font-mono text-xs tracking-wide text-muted uppercase">
-              <span
-                aria-hidden="true"
-                className="inline-block h-1.5 w-1.5 rounded-full bg-accent"
-              />
-              {home.statLine}
-            </p>
           </div>
         </div>
       </section>

@@ -59,10 +59,12 @@ body {
 /* Beehiiv renders its form in an iframe, so page CSS cannot reach inside it.
    Colors are set in the Beehiiv dashboard (Forms -> Design). All we control
    here is how the iframe sits in the layout. */
+/* Height is reserved so the skeleton and the loaded iframe occupy the same
+   box and the page never jumps when the form arrives. */
 .beehiiv-embed {
   width: 100%;
   max-width: 34rem;
-  min-height: 84px;
+  min-height: 340px;
 }
 
 .beehiiv-embed iframe {

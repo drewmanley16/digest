@@ -28,6 +28,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
+      <head>
+        {/* The subscribe form is a third-party iframe whose request chain is
+            serial: loader -> api -> iframe document. Warming the connection and
+            fetching the loader alongside our own JS takes a few hundred ms off
+            the front of that chain. */}
+        <link
+          rel="preconnect"
+          href="https://subscribe-forms.beehiiv.com"
+          crossOrigin=""
+        />
+        <link rel="preload" as="script" href={beehiiv.loaderSrc} />
+      </head>
       <body className="flex min-h-full flex-col">
         <Nav />
         {children}

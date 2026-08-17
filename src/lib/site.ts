@@ -50,8 +50,6 @@ export const home = {
   heroCta: "Join the newsletter →",
   subscribeHeading: "Join the newsletter",
   subscribeSupport: "Free, one email a week, unsubscribe anytime.",
-  // TODO: real reader count and send day
-  statLine: "Join X readers every [day]",
   letter: {
     heading: "A note to the reader",
     to: "YOU",
@@ -65,12 +63,6 @@ export const home = {
       "It's free, it comes once a week, and it takes about four minutes to read. If that sounds useful, I'd love to have you.",
     ],
     signoff: "Drew",
-    stamp: {
-      top: "SENT WITH LOVE",
-      initials: "DM",
-      // TODO: real send day + time
-      bottom: "MONDAY 06:00",
-    },
   },
 };
 
