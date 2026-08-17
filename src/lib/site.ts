@@ -23,12 +23,6 @@ export const socials = [
     href: "https://www.linkedin.com/in/drewmanley/",
     icon: "linkedin",
   },
-  {
-    label: "X",
-    handle: "@drewbydoo05",
-    href: "https://x.com/drewbydoo05",
-    icon: "x",
-  },
 ] as const;
 
 export const beehiiv = {
@@ -61,8 +55,7 @@ export const home = {
   letter: {
     heading: "A note to the reader",
     to: "YOU",
-    // TODO: real from-address
-    from: "DREW <HELLO@DIGEST.MD>",
+    from: "DREW <DREWMANLEY16@GMAIL.COM>",
     re: "WHY I WRITE THIS",
     // TODO: replace with your own words — this is the most personal thing on the site
     paragraphs: [
@@ -129,12 +122,11 @@ export const partnerships = {
   profile: {
     categories: ["AI & Tech", "Developer Tools", "Education"],
     totalFollowersLabel: "Total followers",
-    // Instagram 2,976 + LinkedIn 2,379. TODO: add X once you pull the number.
+    // Instagram 2,976 + LinkedIn 2,379.
     totalFollowers: "5,355",
     platforms: [
       { icon: "instagram", label: "Instagram", value: "2,976" },
       { icon: "linkedin", label: "LinkedIn", value: "2,379" },
-      { icon: "x", label: "X", value: "—" },
     ],
     ctaLabel: "View media kit →",
     aboutLabel: "About me",
@@ -242,22 +234,22 @@ export const partnerships = {
     {
       icon: "video",
       title: "Sponsored video package",
-      body: "One reel cross-posted to Instagram, TikTok, and YouTube Shorts. Story-driven, built for the feed rather than read like an ad.",
+      body: "A dedicated reel on Instagram, scripted and edited by me. Story-driven, built for the feed rather than read like an ad.",
     },
     {
       icon: "link",
       title: "Link in bio placement",
-      body: "Dedicated link in bio across all platforms for one full week.",
+      body: "Your link in my Instagram and LinkedIn bios for one full week.",
     },
     {
       icon: "megaphone",
       title: "Paid ad usage",
-      body: "Meta whitelisting and TikTok Spark Ads. Run my content as paid ads from your brand's account.",
+      body: "Meta whitelisting. Run my content as paid ads from your brand's own account.",
     },
     {
       icon: "bolt",
       title: "Automated DM integration",
-      body: "A ManyChat flow that sends followers straight to your product, landing page, or offer.",
+      body: "A ManyChat flow on Instagram that sends commenters straight to your product, landing page, or offer.",
     },
     {
       icon: "mail",
@@ -303,8 +295,7 @@ export const partnerships = {
   closing: {
     headline: "Let's work together",
     body: "Send me a note with what you're building and what you have in mind. I reply to everything.",
-    // TODO: real email
-    email: "hello@digest.md",
+    email: "drewmanley16@gmail.com",
   },
 };
 
