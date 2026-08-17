@@ -38,44 +38,32 @@ export default function MediaKitPage() {
       <PlatformStats platforms={partnerships.platformStats} />
 
       <Section>
-        <Label>{demographics.label}</Label>
+        <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <Label>{demographics.label}</Label>
+          <p className="font-mono text-xs tracking-wide text-muted uppercase">
+            {demographics.note}
+          </p>
+        </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2">
-          <div>
-            <p className="font-mono text-sm text-fg">{demographics.ageLabel}</p>
-            <ul className="mt-4 space-y-3">
-              {demographics.age.map((bucket) => (
-                <li key={bucket.range}>
-                  <div className="flex justify-between font-mono text-xs text-muted">
-                    <span>{bucket.range}</span>
-                    <span className="text-fg">{bucket.percent}%</span>
-                  </div>
-                  <div className="mt-1.5">
-                    <Bar percent={bucket.percent} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-mono text-sm text-fg">
-              {demographics.genderLabel}
-            </p>
-            <ul className="mt-4 space-y-3">
-              {demographics.gender.map((slice) => (
-                <li key={slice.label}>
-                  <div className="flex justify-between font-mono text-xs text-muted">
-                    <span>{slice.label}</span>
-                    <span className="text-fg">{slice.percent}%</span>
-                  </div>
-                  <div className="mt-1.5">
-                    <Bar percent={slice.percent} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2">
+          {demographics.groups.map((group) => (
+            <div key={group.label}>
+              <p className="font-mono text-sm text-fg">{group.label}</p>
+              <ul className="mt-4 space-y-3">
+                {group.items.map((item) => (
+                  <li key={item.name}>
+                    <div className="flex justify-between gap-4 font-mono text-xs text-muted">
+                      <span className="truncate">{item.name}</span>
+                      <span className="shrink-0 text-fg">{item.display}</span>
+                    </div>
+                    <div className="mt-1.5">
+                      <Bar percent={item.percent} />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </Section>
 

@@ -123,15 +123,17 @@ export const partnerships = {
   // TODO: finalize
   subhead:
     "I make short-form video and write a weekly newsletter about AI tools and news. The audience is mostly engineers, students, and early-career technical people who try new tools first.",
-  // ALL FIGURES BELOW ARE PLACEHOLDERS. Fill from your own Instagram/LinkedIn
-  // analytics and Beehiiv dashboard before sending this page to any brand.
+  // Instagram figures from the professional dashboard, LinkedIn from the
+  // aggregate analytics export. Window: 21 Jul - 17 Aug 2026.
+  // Refresh both before pitching; the window label lives on each block.
   profile: {
     categories: ["AI & Tech", "Developer Tools", "Education"],
     totalFollowersLabel: "Total followers",
-    totalFollowers: "—",
+    // Instagram 2,976 + LinkedIn 2,379. TODO: add X once you pull the number.
+    totalFollowers: "5,355",
     platforms: [
-      { icon: "instagram", label: "Instagram", value: "—" },
-      { icon: "linkedin", label: "LinkedIn", value: "—" },
+      { icon: "instagram", label: "Instagram", value: "2,976" },
+      { icon: "linkedin", label: "LinkedIn", value: "2,379" },
       { icon: "x", label: "X", value: "—" },
     ],
     ctaLabel: "View media kit →",
@@ -148,67 +150,90 @@ export const partnerships = {
     { name: "Devmaxx", logo: "/brands/devmaxx.png" as string | null },
   ],
 
+  statsWindow: "21 Jul – 17 Aug 2026",
+
   // One block per platform, same card grid for each.
   platformStats: [
     {
       name: "Instagram",
       icon: "instagram",
       handle: "@drewisliving",
-      note: "Last 30 days",
+      note: "21 Jul – 17 Aug 2026",
       metrics: [
-        { label: "Followers", value: "—" },
-        { label: "Engagement", value: "—" },
-        { label: "Follower engagement", value: "—" },
-        { label: "Total impressions", value: "—" },
-        { label: "30 day reach", value: "—" },
-        { label: "Avg reels views", value: "—" },
+        { label: "Followers", value: "2,976" },
+        { label: "Views", value: "565,379" },
+        { label: "Accounts reached", value: "243,418" },
+        { label: "Interactions", value: "42,204" },
+        { label: "Accounts engaged", value: "23,028" },
+        { label: "External link taps", value: "1,135" },
       ],
     },
     {
       name: "LinkedIn",
       icon: "linkedin",
       handle: "drewmanley",
-      note: "Last 30 days",
+      note: "21 Jul – 17 Aug 2026",
       metrics: [
-        { label: "Followers", value: "—" },
-        { label: "Engagement", value: "—" },
-        { label: "Impressions", value: "—" },
-        { label: "Total posts", value: "—" },
-        { label: "Avg reactions", value: "—" },
-        { label: "Avg comments", value: "—" },
-      ],
-    },
-    {
-      name: "X",
-      icon: "x",
-      handle: "@drewbydoo05",
-      note: "Last 30 days",
-      metrics: [
-        { label: "Followers", value: "—" },
-        { label: "Impressions", value: "—" },
-        { label: "Engagement", value: "—" },
-        { label: "Total posts", value: "—" },
-        { label: "Avg likes", value: "—" },
-        { label: "Avg reposts", value: "—" },
+        { label: "Followers", value: "2,379" },
+        { label: "Impressions", value: "54,137" },
+        { label: "Members reached", value: "29,013" },
+        { label: "Engagements", value: "931" },
+        { label: "Engagement rate", value: "1.7%" },
+        { label: "New followers", value: "+203" },
       ],
     },
   ],
 
+  // Real LinkedIn audience breakdown from the export. Instagram's age/gender
+  // split isn't in the data you sent — add a group here if you pull it.
   demographics: {
     label: "Audience demographics",
-    ageLabel: "Age",
-    // TODO: real split from Instagram insights
-    age: [
-      { range: "13-17", percent: 0 },
-      { range: "18-24", percent: 0 },
-      { range: "25-34", percent: 0 },
-      { range: "35-44", percent: 0 },
-      { range: "45-54", percent: 0 },
-    ],
-    genderLabel: "Gender",
-    gender: [
-      { label: "Male", percent: 0 },
-      { label: "Female", percent: 0 },
+    note: "LinkedIn audience · 21 Jul – 17 Aug 2026",
+    groups: [
+      {
+        label: "Location",
+        items: [
+          { name: "San Francisco Bay Area", percent: 24, display: "24%" },
+          { name: "Greater Eugene-Springfield", percent: 12, display: "12%" },
+          { name: "Portland, Oregon Metro", percent: 9, display: "9%" },
+          { name: "New York City Metro", percent: 5, display: "5%" },
+          { name: "Los Angeles Metro", percent: 4, display: "4%" },
+          { name: "Austin, Texas Metro", percent: 4, display: "4%" },
+        ],
+      },
+      {
+        label: "Seniority",
+        items: [
+          { name: "Entry", percent: 32, display: "32%" },
+          { name: "Senior", percent: 24, display: "24%" },
+          { name: "Training", percent: 9, display: "9%" },
+          { name: "Director", percent: 4, display: "4%" },
+          { name: "Owner", percent: 4, display: "4%" },
+          { name: "Manager", percent: 3, display: "3%" },
+        ],
+      },
+      {
+        label: "Industry",
+        items: [
+          { name: "Software Development", percent: 19, display: "19%" },
+          { name: "Technology & Internet", percent: 10, display: "10%" },
+          { name: "Financial Services", percent: 6, display: "6%" },
+          { name: "IT Services & Consulting", percent: 6, display: "6%" },
+          { name: "Higher Education", percent: 5, display: "5%" },
+          { name: "Business Consulting", percent: 5, display: "5%" },
+        ],
+      },
+      {
+        label: "Company",
+        items: [
+          { name: "Zendesk", percent: 8, display: "8%" },
+          { name: "PayPal", percent: 6, display: "6%" },
+          { name: "University of Oregon", percent: 2, display: "2%" },
+          { name: "Deloitte", percent: 0.5, display: "<1%" },
+          { name: "Apple", percent: 0.5, display: "<1%" },
+          { name: "Amazon", percent: 0.5, display: "<1%" },
+        ],
+      },
     ],
   },
 
@@ -248,12 +273,12 @@ export const partnerships = {
   reasonsLabel: "Why brands work with me",
   // TODO: confirm — the numeric claims must match the stats above
   reasons: [
-    "Engaged audience across Instagram, LinkedIn, and X.",
-    "Audience deeply engaged in AI and developer tools.",
+    "565K views and 243K accounts reached on Instagram in the last 30 days.",
+    "Audience concentrated in the SF Bay Area, Portland, and NYC — 19% work in software development.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
     "Trusted by AI startups like Higgsfield AI and Devmaxx.",
-    "Clear reporting on reach, engagement, and clicks after every campaign.",
+    "Clear reporting on reach, engagement, and clicks after every campaign, straight from platform analytics.",
   ],
   faqLabel: "Questions brands ask",
   // TODO: confirm rates, turnaround, and exclusivity terms before sending to anyone
