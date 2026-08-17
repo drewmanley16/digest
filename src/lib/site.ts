@@ -114,10 +114,10 @@ export const partnerships = {
   profile: {
     categories: ["AI & Tech", "Developer Tools", "Education"],
     totalFollowersLabel: "Total followers",
-    // Instagram 2,976 + LinkedIn 2,379.
-    totalFollowers: "5,355",
+    // Instagram 3,123 + LinkedIn 2,379.
+    totalFollowers: "5,502",
     platforms: [
-      { icon: "instagram", label: "Instagram", value: "2,976" },
+      { icon: "instagram", label: "Instagram", value: "3,123" },
       { icon: "linkedin", label: "LinkedIn", value: "2,379" },
     ],
     ctaLabel: "View media kit →",
@@ -144,7 +144,7 @@ export const partnerships = {
       handle: "@drewisliving",
       note: "21 Jul – 17 Aug 2026",
       metrics: [
-        { label: "Followers", value: "2,976" },
+        { label: "Followers", value: "3,123" },
         { label: "Views", value: "602K" },
         { label: "Viewers", value: "252,675" },
         { label: "Interactions", value: "39.4K" },
