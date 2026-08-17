@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { BrandRow } from "@/components/BrandRow";
 import { PlatformStats } from "@/components/PlatformStats";
-import { Button, Eyebrow, Hero, Label, Section } from "@/components/ui";
+import { Eyebrow, Hero, Label, Section } from "@/components/ui";
 import { mediaKit, partnerships } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -70,29 +69,6 @@ export default function MediaKitPage() {
       <Section>
         <Label>{partnerships.brandsLabel}</Label>
         <BrandRow brands={partnerships.brands} />
-      </Section>
-
-      <Section>
-        <h2 className="font-mono text-2xl tracking-tight text-fg sm:text-3xl">
-          {mediaKit.closing.headline}
-        </h2>
-
-        <p className="mt-5 max-w-[65ch] leading-relaxed text-muted">
-          {mediaKit.closing.body}
-        </p>
-
-        <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Button href={`mailto:${partnerships.closing.email}`}>
-            {partnerships.closing.email}
-          </Button>
-
-          <Link
-            href="/partnerships"
-            className="font-mono text-sm text-muted transition-colors hover:text-accent"
-          >
-            {mediaKit.backLabel}
-          </Link>
-        </div>
       </Section>
     </main>
   );

@@ -145,11 +145,11 @@ export const partnerships = {
       note: "21 Jul – 17 Aug 2026",
       metrics: [
         { label: "Followers", value: "2,976" },
-        { label: "Views", value: "565,379" },
-        { label: "Accounts reached", value: "243,418" },
-        { label: "Interactions", value: "42,204" },
-        { label: "Accounts engaged", value: "23,028" },
-        { label: "External link taps", value: "1,135" },
+        { label: "Views", value: "602K" },
+        { label: "Viewers", value: "252,675" },
+        { label: "Interactions", value: "39.4K" },
+        { label: "Profile visits", value: "10,831" },
+        { label: "Bio link taps", value: "1,164" },
       ],
     },
     {
@@ -168,14 +168,42 @@ export const partnerships = {
     },
   ],
 
-  // Real LinkedIn audience breakdown from the export. Instagram's age/gender
-  // split isn't in the data you sent — add a group here if you pull it.
+  // LinkedIn breakdown from the analytics export, Instagram from the
+  // Insights > Audience tab. Both windows: 21 Jul - 17 Aug 2026.
   demographics: {
     label: "Audience demographics",
-    note: "LinkedIn audience · 21 Jul – 17 Aug 2026",
+    note: "LinkedIn + Instagram · 21 Jul – 17 Aug 2026",
     groups: [
       {
-        label: "Location",
+        label: "Age (Instagram)",
+        items: [
+          { name: "18-24", percent: 45.6, display: "45.6%" },
+          { name: "25-34", percent: 41.5, display: "41.5%" },
+          { name: "35-44", percent: 6.8, display: "6.8%" },
+          { name: "45-54", percent: 3.1, display: "3.1%" },
+          { name: "65+", percent: 1.3, display: "1.3%" },
+          { name: "55-64", percent: 1.0, display: "1.0%" },
+        ],
+      },
+      {
+        label: "Country (Instagram)",
+        items: [
+          { name: "United States", percent: 40.0, display: "40.0%" },
+          { name: "India", percent: 23.4, display: "23.4%" },
+          { name: "Canada", percent: 4.6, display: "4.6%" },
+          { name: "United Kingdom", percent: 2.9, display: "2.9%" },
+          { name: "Pakistan", percent: 1.6, display: "1.6%" },
+        ],
+      },
+      {
+        label: "Gender (Instagram)",
+        items: [
+          { name: "Men", percent: 81.1, display: "81.1%" },
+          { name: "Women", percent: 18.9, display: "18.9%" },
+        ],
+      },
+      {
+        label: "Location (LinkedIn)",
         items: [
           { name: "San Francisco Bay Area", percent: 24, display: "24%" },
           { name: "Greater Eugene-Springfield", percent: 12, display: "12%" },
@@ -186,7 +214,7 @@ export const partnerships = {
         ],
       },
       {
-        label: "Seniority",
+        label: "Seniority (LinkedIn)",
         items: [
           { name: "Entry", percent: 32, display: "32%" },
           { name: "Senior", percent: 24, display: "24%" },
@@ -197,7 +225,7 @@ export const partnerships = {
         ],
       },
       {
-        label: "Industry",
+        label: "Industry (LinkedIn)",
         items: [
           { name: "Software Development", percent: 19, display: "19%" },
           { name: "Technology & Internet", percent: 10, display: "10%" },
@@ -208,7 +236,7 @@ export const partnerships = {
         ],
       },
       {
-        label: "Company",
+        label: "Company (LinkedIn)",
         items: [
           { name: "Zendesk", percent: 8, display: "8%" },
           { name: "PayPal", percent: 6, display: "6%" },
@@ -257,7 +285,7 @@ export const partnerships = {
   reasonsLabel: "Why brands work with me",
   // TODO: confirm — the numeric claims must match the stats above
   reasons: [
-    "565K views and 243K accounts reached on Instagram in the last 30 days.",
+    "602K views and 252K viewers on Instagram in the last 30 days.",
     "Audience concentrated in the SF Bay Area, Portland, and NYC. 19% work in software development.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
@@ -296,11 +324,6 @@ export const mediaKit = {
   headline: "Media kit",
   subhead:
     "Full audience numbers across every platform, plus the brands I've worked with. Figures refresh when I pitch. Ask if you need something more recent.",
-  backLabel: "← Back to partnerships",
-  closing: {
-    headline: "Want the deck?",
-    body: "Happy to send a PDF version or walk through the numbers on a call.",
-  },
 };
 
 export const footer = {
