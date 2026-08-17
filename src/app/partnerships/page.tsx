@@ -8,7 +8,7 @@ import { Button, Eyebrow, Hero, Label, Section } from "@/components/ui";
 import { partnerships } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "digest.md — partnerships",
+  title: "digest.md · partnerships",
   description: partnerships.subhead,
 };
 

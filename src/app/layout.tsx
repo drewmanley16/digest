@@ -17,9 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "digest.md — weekly AI news, tools, and takes",
+  title: "digest.md · weekly AI news, tools, and takes",
   description:
-    "A weekly newsletter on AI news, tools worth trying, and an honest read on both. Written by Drew, CS student and AI infra engineer.",
+    "A weekly newsletter on AI news, tools worth trying, and what I actually think. Written by Drew, CS student and software engineer at PayPal.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

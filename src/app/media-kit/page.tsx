@@ -6,7 +6,7 @@ import { Button, Eyebrow, Hero, Label, Section } from "@/components/ui";
 import { mediaKit, partnerships } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "digest.md — media kit",
+  title: "digest.md · media kit",
   description: mediaKit.subhead,
 };
 

@@ -5,7 +5,7 @@ import { Eyebrow, Hero, Section } from "@/components/ui";
 import { newsletter } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "digest.md — the newsletter",
+  title: "digest.md · the newsletter",
   description: newsletter.subhead,
 };
 

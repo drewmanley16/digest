@@ -6,7 +6,7 @@ export function BrandRow({ brands }: { brands: readonly Brand[] }) {
   if (brands.length === 0) {
     return (
       <p className="mt-6 font-mono text-sm text-muted">
-        Open to first partners — your logo could go here.
+        Open to first partners. Your logo could go here.
       </p>
     );
   }

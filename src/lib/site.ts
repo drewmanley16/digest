@@ -44,9 +44,9 @@ export const home = {
   eyebrow: "$ whoami",
   // The newsletter, framed as yours — not a standalone product.
   headline: "digest.md by Drew",
-  byline: "CS @ University of Oregon · building AI infra at PayPal",
+  byline: "CS @ University of Oregon · SWE at PayPal",
   subhead:
-    "For people who want to keep up with AI without reading twenty newsletters. What actually happened this week, the tools worth opening, and an honest take on both — from someone building with them every day.",
+    "Keep up with AI without reading twenty newsletters. What happened this week, the tools worth trying, and what I actually think.",
   heroCta: "Join the newsletter →",
   subscribeHeading: "Join the newsletter",
   subscribeSupport: "Free, one email a week, unsubscribe anytime.",
@@ -60,11 +60,11 @@ export const home = {
     // TODO: replace with your own words — this is the most personal thing on the site
     paragraphs: [
       "I got tired of reading about AI and never actually building anything with it. Every newsletter was either a wall of links or someone telling me the world was about to end. Neither helped me ship anything.",
-      "So I started writing the email I wanted to get. I'm a CS junior at the University of Oregon, I work on AI infrastructure at PayPal, and I spend most weekends at hackathons putting these tools through their paces. When something is good, I've usually already broken it in three ways by the time I write about it.",
-      "That's the whole angle. Not an analyst take, not a hype take — a builder's take. If a tool is overhyped I'll say so, and if I was wrong last week I'll say that too.",
+      "So I started writing the email I wanted to get. I'm a CS junior at the University of Oregon, I work as a software engineer at PayPal, and I spend most weekends at hackathons putting these tools through their paces. When something is good, I've usually already broken it in three ways by the time I write about it.",
+      "That's the whole angle. Not an analyst take or a hype take, just a builder's take. If a tool is overhyped I'll say so, and if I was wrong last week I'll say that too.",
       "It's free, it comes once a week, and it takes about four minutes to read. If that sounds useful, I'd love to have you.",
     ],
-    signoff: "— Drew",
+    signoff: "Drew",
     stamp: {
       top: "SENT WITH LOVE",
       initials: "DM",
@@ -78,14 +78,14 @@ export const newsletter = {
   eyebrow: "$ cat digest.md",
   headline: "digest.md",
   subhead: "Weekly AI news, new tools, and what I think about them.",
-  byline: "Drew — CS @ University of Oregon, building AI infra at PayPal.",
+  byline: "Drew · CS @ University of Oregon · SWE at PayPal",
   // TODO: real subscriber count
   subscriberCount: "Join X readers. Free, weekly, unsubscribe anytime.",
   whyLabel: "// why this exists",
   // TODO: replace with real copy
   whyParagraphs: [
-    "Most AI newsletters are either link dumps or hype. I wanted something in between — what happened this week, what's actually worth trying, and what I think about it.",
-    "I read a lot of this stuff anyway. I'm a CS junior working on AI infrastructure at PayPal, and I spend most weekends building things at hackathons. Writing it down forces me to have an actual opinion instead of just bookmarking another launch post.",
+    "Most AI newsletters are either link dumps or hype. I wanted something in between: what happened this week, what's actually worth trying, and what I think about it.",
+    "I read a lot of this stuff anyway. I'm a CS junior working as a software engineer at PayPal, and I spend most weekends building things at hackathons. Writing it down forces me to have an actual opinion instead of just bookmarking another launch post.",
     "So every week you get three things: the news that mattered, a couple of tools I've actually opened, and a short take on where it's going. If something is overhyped, I'll say so.",
     "It takes about four minutes to read. That's the whole pitch.",
   ],
@@ -131,7 +131,7 @@ export const partnerships = {
     ctaLabel: "View media kit →",
     aboutLabel: "About me",
     about:
-      "I'm Drew, a CS student at the University of Oregon building AI infrastructure at PayPal. I make short-form video about AI tools and write digest.md, a weekly newsletter for people who build with this stuff rather than just read about it.",
+      "I'm Drew, a CS student at the University of Oregon and a software engineer at PayPal. I make short-form video about AI tools and write digest.md, a weekly newsletter for people who build with this stuff rather than just read about it.",
   },
 
   // Drop logo files in public/brands/ and point `logo` at them.
@@ -266,7 +266,7 @@ export const partnerships = {
   // TODO: confirm — the numeric claims must match the stats above
   reasons: [
     "565K views and 243K accounts reached on Instagram in the last 30 days.",
-    "Audience concentrated in the SF Bay Area, Portland, and NYC — 19% work in software development.",
+    "Audience concentrated in the SF Bay Area, Portland, and NYC. 19% work in software development.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
     "Trusted by AI startups like Higgsfield AI and Devmaxx.",
@@ -277,7 +277,7 @@ export const partnerships = {
   faq: [
     {
       q: "What does a partnership cost?",
-      a: "It depends on the deliverables and usage rights. Send me what you have in mind and I'll come back with a flat rate — no retainers, no hidden fees.",
+      a: "It depends on the deliverables and usage rights. Send me what you have in mind and I'll come back with a flat rate. No retainers, no hidden fees.",
     },
     {
       q: "How long does turnaround take?",
@@ -303,7 +303,7 @@ export const mediaKit = {
   eyebrow: "$ cat mediakit.md",
   headline: "Media kit",
   subhead:
-    "Full audience numbers across every platform, plus the brands I've worked with. Figures refresh when I pitch — ask if you need something more recent.",
+    "Full audience numbers across every platform, plus the brands I've worked with. Figures refresh when I pitch. Ask if you need something more recent.",
   backLabel: "← Back to partnerships",
   closing: {
     headline: "Want the deck?",
