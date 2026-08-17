@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Avatar } from "@/components/Avatar";
+import { BrandRow } from "@/components/BrandRow";
 import { Faq } from "@/components/Faq";
 import { OfferingIcon } from "@/components/Icons";
 import { SocialIcon } from "@/components/SocialIcons";
@@ -12,27 +12,8 @@ export const metadata: Metadata = {
   description: partnerships.subhead,
 };
 
-function Metric({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="border border-line p-5">
-      <p className="font-mono text-xs tracking-[0.14em] text-muted uppercase">
-        {label}
-      </p>
-      <p className="mt-3 font-mono text-2xl tracking-tight text-fg">{value}</p>
-    </div>
-  );
-}
-
-function Bar({ percent }: { percent: number }) {
-  return (
-    <div className="h-1.5 w-full bg-line">
-      <div className="h-full bg-accent" style={{ width: `${percent}%` }} />
-    </div>
-  );
-}
-
 export default function PartnershipsPage() {
-  const { profile: kit, demographics } = partnerships;
+  const { profile: kit } = partnerships;
 
   return (
     <main className="fade-in flex-1">
@@ -82,6 +63,10 @@ export default function PartnershipsPage() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-8">
+              <Button href="/media-kit">{kit.ctaLabel}</Button>
+            </div>
           </div>
         </div>
       </Hero>
@@ -89,116 +74,6 @@ export default function PartnershipsPage() {
       <Section>
         <Label>{kit.aboutLabel}</Label>
         <p className="mt-5 max-w-[65ch] leading-relaxed text-fg">{kit.about}</p>
-      </Section>
-
-      <Section>
-        <Label>{partnerships.brandsLabel}</Label>
-
-        {partnerships.brands.length > 0 ? (
-          <ul className="mt-6 flex flex-wrap items-center gap-4">
-            {partnerships.brands.map((brand) => (
-              <li key={brand.name}>
-                {brand.logo ? (
-                  // Both logos ship with light backgrounds baked in, so they sit
-                  // on a light tile rather than floating on the near-black page.
-                  <figure>
-                    <div className="flex h-20 w-36 items-center justify-center bg-white p-3">
-                      <Image
-                        src={brand.logo}
-                        alt={brand.name}
-                        width={144}
-                        height={80}
-                        className="max-h-full w-auto object-contain"
-                      />
-                    </div>
-                    <figcaption className="mt-2 text-center font-mono text-xs text-muted">
-                      {brand.name}
-                    </figcaption>
-                  </figure>
-                ) : (
-                  <span className="inline-flex h-20 items-center border border-line px-5 font-mono text-sm text-muted">
-                    {brand.name}
-                  </span>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="mt-6 font-mono text-sm text-muted">
-            Open to first partners — your logo could go here.
-          </p>
-        )}
-      </Section>
-
-      {partnerships.platformStats.map((platform) => (
-        <Section key={platform.name}>
-          <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <h2 className="flex items-center gap-3 font-mono text-2xl tracking-tight text-fg">
-              <span className="text-accent">
-                <SocialIcon name={platform.icon} />
-              </span>
-              {platform.name}
-              <span className="font-mono text-sm text-muted">
-                {platform.handle}
-              </span>
-            </h2>
-            <p className="font-mono text-xs tracking-wide text-muted uppercase">
-              {platform.note}
-            </p>
-          </div>
-
-          <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
-            {platform.metrics.map((metric) => (
-              <Metric
-                key={metric.label}
-                label={metric.label}
-                value={metric.value}
-              />
-            ))}
-          </div>
-        </Section>
-      ))}
-
-      <Section>
-        <Label>{demographics.label}</Label>
-
-        <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2">
-          <div>
-            <p className="font-mono text-sm text-fg">{demographics.ageLabel}</p>
-            <ul className="mt-4 space-y-3">
-              {demographics.age.map((bucket) => (
-                <li key={bucket.range}>
-                  <div className="flex justify-between font-mono text-xs text-muted">
-                    <span>{bucket.range}</span>
-                    <span className="text-fg">{bucket.percent}%</span>
-                  </div>
-                  <div className="mt-1.5">
-                    <Bar percent={bucket.percent} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-mono text-sm text-fg">
-              {demographics.genderLabel}
-            </p>
-            <ul className="mt-4 space-y-3">
-              {demographics.gender.map((slice) => (
-                <li key={slice.label}>
-                  <div className="flex justify-between font-mono text-xs text-muted">
-                    <span>{slice.label}</span>
-                    <span className="text-fg">{slice.percent}%</span>
-                  </div>
-                  <div className="mt-1.5">
-                    <Bar percent={slice.percent} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </Section>
 
       <Section>
@@ -237,6 +112,17 @@ export default function PartnershipsPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </Section>
+
+      <Section>
+        <Label>{partnerships.brandsLabel}</Label>
+        <BrandRow brands={partnerships.brands} />
+
+        <div className="mt-8">
+          <Button href="/media-kit" variant="secondary">
+            {kit.ctaLabel}
+          </Button>
         </div>
       </Section>
 

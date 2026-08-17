@@ -9,12 +9,26 @@ export const nav = [
   { href: "/partnerships", label: "Partnerships" },
 ] as const;
 
-// TODO: real profile URLs. `icon` maps to a glyph in components/SocialIcons.tsx.
+// `icon` maps to a glyph in components/SocialIcons.tsx.
 export const socials = [
-  { label: "Instagram", href: "https://instagram.com/", icon: "instagram" },
-  { label: "TikTok", href: "https://tiktok.com/", icon: "tiktok" },
-  { label: "LinkedIn", href: "https://linkedin.com/", icon: "linkedin" },
-  { label: "X", href: "https://x.com/", icon: "x" },
+  {
+    label: "Instagram",
+    handle: "@drewisliving",
+    href: "https://www.instagram.com/drewisliving/",
+    icon: "instagram",
+  },
+  {
+    label: "LinkedIn",
+    handle: "drewmanley",
+    href: "https://www.linkedin.com/in/drewmanley/",
+    icon: "linkedin",
+  },
+  {
+    label: "X",
+    handle: "@drewbydoo05",
+    href: "https://x.com/drewbydoo05",
+    icon: "x",
+  },
 ] as const;
 
 export const beehiiv = {
@@ -118,8 +132,9 @@ export const partnerships = {
     platforms: [
       { icon: "instagram", label: "Instagram", value: "—" },
       { icon: "linkedin", label: "LinkedIn", value: "—" },
-      { icon: "tiktok", label: "TikTok", value: "—" },
+      { icon: "x", label: "X", value: "—" },
     ],
+    ctaLabel: "View media kit →",
     aboutLabel: "About me",
     about:
       "I'm Drew, a CS student at the University of Oregon building AI infrastructure at PayPal. I make short-form video about AI tools and write digest.md, a weekly newsletter for people who build with this stuff rather than just read about it.",
@@ -138,7 +153,7 @@ export const partnerships = {
     {
       name: "Instagram",
       icon: "instagram",
-      handle: "@TODO",
+      handle: "@drewisliving",
       note: "Last 30 days",
       metrics: [
         { label: "Followers", value: "—" },
@@ -152,7 +167,7 @@ export const partnerships = {
     {
       name: "LinkedIn",
       icon: "linkedin",
-      handle: "@TODO",
+      handle: "drewmanley",
       note: "Last 30 days",
       metrics: [
         { label: "Followers", value: "—" },
@@ -161,6 +176,20 @@ export const partnerships = {
         { label: "Total posts", value: "—" },
         { label: "Avg reactions", value: "—" },
         { label: "Avg comments", value: "—" },
+      ],
+    },
+    {
+      name: "X",
+      icon: "x",
+      handle: "@drewbydoo05",
+      note: "Last 30 days",
+      metrics: [
+        { label: "Followers", value: "—" },
+        { label: "Impressions", value: "—" },
+        { label: "Engagement", value: "—" },
+        { label: "Total posts", value: "—" },
+        { label: "Avg likes", value: "—" },
+        { label: "Avg reposts", value: "—" },
       ],
     },
   ],
@@ -219,7 +248,7 @@ export const partnerships = {
   reasonsLabel: "Why brands work with me",
   // TODO: confirm — the numeric claims must match the stats above
   reasons: [
-    "Engaged audience across Instagram, TikTok, and LinkedIn.",
+    "Engaged audience across Instagram, LinkedIn, and X.",
     "Audience deeply engaged in AI and developer tools.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
@@ -251,6 +280,18 @@ export const partnerships = {
     body: "Send me a note with what you're building and what you have in mind. I reply to everything.",
     // TODO: real email
     email: "hello@digest.md",
+  },
+};
+
+export const mediaKit = {
+  eyebrow: "$ cat mediakit.md",
+  headline: "Media kit",
+  subhead:
+    "Full audience numbers across every platform, plus the brands I've worked with. Figures refresh when I pitch — ask if you need something more recent.",
+  backLabel: "← Back to partnerships",
+  closing: {
+    headline: "Want the deck?",
+    body: "Happy to send a PDF version or walk through the numbers on a call.",
   },
 };
 
