@@ -339,8 +339,6 @@ export const resources = {
   subhead:
     "Everything I've put together, free. Enter your email once and every one of them unlocks.",
   indexLabel: "Available now",
-  // Set expectations on the card, so the email box is never a surprise.
-  indexGateHint: "Email required",
   gate: {
     label: "// locked",
     heading: "Enter your email to unlock it",

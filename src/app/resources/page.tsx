@@ -33,11 +33,9 @@ export default function ResourcesPage() {
                 href={`/resources/${item.slug}`}
                 className="group block border border-line p-6 transition-colors hover:border-accent"
               >
-                <div className="flex flex-wrap items-center gap-3 font-mono text-xs tracking-[0.14em] uppercase">
-                  <span className="text-muted">{item.format}</span>
-                  <span className="text-line">/</span>
-                  <span className="text-accent">{resources.indexGateHint}</span>
-                </div>
+                <p className="font-mono text-xs tracking-[0.14em] text-muted uppercase">
+                  {item.format}
+                </p>
 
                 <h2 className="mt-3 font-mono text-xl tracking-tight text-fg transition-colors group-hover:text-accent">
                   {item.title}
