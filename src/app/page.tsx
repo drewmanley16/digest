@@ -2,7 +2,7 @@ import { Avatar } from "@/components/Avatar";
 import { BeehiivEmbed } from "@/components/BeehiivEmbed";
 import { Letter } from "@/components/Letter";
 import { SocialIcon } from "@/components/SocialIcons";
-import { Button, Eyebrow, Section } from "@/components/ui";
+import { Button, Section } from "@/components/ui";
 import { home, socials } from "@/lib/site";
 
 export default function HomePage() {
@@ -10,9 +10,7 @@ export default function HomePage() {
     <main className="fade-in flex-1">
       <section className="px-5 pt-14 pb-16 sm:px-8 sm:pt-20 sm:pb-20">
         <div className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
-          <Eyebrow>{home.eyebrow}</Eyebrow>
-
-          <Avatar size={168} className="mt-8" />
+          <Avatar size={168} />
 
           <h1 className="mt-8 font-mono text-3xl tracking-tight text-fg sm:text-5xl">
             {home.headline}

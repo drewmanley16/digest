@@ -43,7 +43,6 @@ export const profile = {
 };
 
 export const home = {
-  eyebrow: "$ whoami",
   // The newsletter, framed as yours — not a standalone product.
   headline: "digest.md by Drew",
   byline: "CS @ University of Oregon · SWE at PayPal",
