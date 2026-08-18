@@ -336,30 +336,36 @@ export const resources = {
   eyebrow: "$ ls resources/",
   headline: "Resources",
   subhead:
-    "Guides and docs I've put together, free. Enter your email once and every one of them unlocks.",
+    "Everything I've put together, free. Enter your email once and every one of them unlocks.",
   indexLabel: "Available now",
+  // Set expectations on the card, so the email box is never a surprise.
+  indexGateHint: "Email required",
   gate: {
-    // TODO: make this yours — it is the whole pitch for handing over an email
+    label: "// locked",
+    heading: "Enter your email to unlock it",
     support:
-      "Enter your email and it opens right up. You'll also get digest.md, my weekly email on AI news and tools. Free, one a week, unsubscribe anytime.",
+      "Type your email below and the doc opens. You'll also get digest.md, my weekly email on AI news and tools. Free, one a week, unsubscribe anytime.",
     placeholder: "you@example.com",
-    button: "Get access",
+    button: "Unlock the doc →",
     pendingButton: "Unlocking...",
     error: "That didn't go through. Try again in a moment.",
     invalidEmail: "Enter a valid email address.",
   },
   unlocked: {
-    note: "You're in. This stays unlocked on this device.",
-    button: "Open it →",
+    label: "// unlocked",
+    heading: "You're in",
+    note: "Click below to open it. It stays unlocked on this device, so you can come back anytime.",
+    button: "Open the doc →",
+    newTabNote: "Opens in a new tab.",
   },
   backLabel: "← All resources",
   items: [
     {
       slug: "system-design",
-      title: "Drew's System Design Resources",
-      // TODO: your words — this is what makes someone hand over an email
+      title: "30 Days of Learning System Design",
+      // TODO: swap for your own words if you want a different pitch
       blurb:
-        "The system design material I actually used to prep, collected in one place instead of scattered across twenty tabs.",
+        "My 30-day run at learning system design: what I studied each day, the resources worth your time, and the notes I took along the way.",
       format: "Google Doc",
       urlEnv: "RESOURCE_URL_SYSTEM_DESIGN",
     },

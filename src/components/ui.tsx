@@ -43,7 +43,13 @@ export function Hero({ children }: { children: ReactNode }) {
 }
 
 const buttonBase =
-  "inline-flex items-center justify-center rounded-sm px-5 py-2.5 font-mono text-sm transition-colors";
+  "inline-flex items-center justify-center rounded-sm font-mono transition-colors";
+
+const buttonSizes = {
+  default: "px-5 py-2.5 text-sm",
+  // For the one CTA on a page that has to be impossible to miss.
+  lg: "px-7 py-4 text-base",
+};
 
 const buttonVariants = {
   primary: "bg-accent text-bg hover:bg-accent/85",
@@ -54,14 +60,16 @@ export function Button({
   href,
   children,
   variant = "primary",
+  size = "default",
   newTab = false,
 }: {
   href: string;
   children: ReactNode;
   variant?: keyof typeof buttonVariants;
+  size?: keyof typeof buttonSizes;
   newTab?: boolean;
 }) {
-  const className = `${buttonBase} ${buttonVariants[variant]}`;
+  const className = `${buttonBase} ${buttonSizes[size]} ${buttonVariants[variant]}`;
   // newTab also opts out of <Link>: prefetching a route that redirects would
   // fire the redirect before anyone clicked it.
   const isInternal = href.startsWith("/") && !newTab;

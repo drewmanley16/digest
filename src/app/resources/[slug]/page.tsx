@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ResourceGate } from "@/components/ResourceGate";
-import { Button, Eyebrow, Hero, Section } from "@/components/ui";
+import { Button, Eyebrow, Hero, Label, Section } from "@/components/ui";
 import {
   findResource,
   isUnlockToken,
@@ -56,25 +56,45 @@ export default async function ResourcePage({
 
       <Section>
         {unlocked ? (
-          <>
-            <p className="font-mono text-sm text-muted">
+          <div className="border border-accent p-6 sm:p-8">
+            <Label>{resources.unlocked.label}</Label>
+
+            <h2 className="mt-4 font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+              {resources.unlocked.heading}
+            </h2>
+
+            <p className="mt-4 max-w-[55ch] leading-relaxed text-muted">
               {resources.unlocked.note}
             </p>
 
-            <div className="mt-6">
-              <Button href={`/resources/${resource.slug}/open`} newTab>
+            <div className="mt-7">
+              <Button
+                href={`/resources/${resource.slug}/open`}
+                size="lg"
+                newTab
+              >
                 {resources.unlocked.button}
               </Button>
             </div>
-          </>
+
+            <p className="mt-4 font-mono text-xs text-muted">
+              {resources.unlocked.newTabNote}
+            </p>
+          </div>
         ) : (
-          <>
-            <p className="max-w-[60ch] leading-relaxed text-muted">
+          <div className="border border-line p-6 sm:p-8">
+            <Label>{resources.gate.label}</Label>
+
+            <h2 className="mt-4 font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+              {resources.gate.heading}
+            </h2>
+
+            <p className="mt-4 max-w-[55ch] leading-relaxed text-muted">
               {resources.gate.support}
             </p>
 
             <ResourceGate slug={resource.slug} />
-          </>
+          </div>
         )}
 
         <div className="mt-10">
