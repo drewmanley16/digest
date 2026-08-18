@@ -43,7 +43,7 @@ export default async function ResourcePage({
   return (
     <main className="fade-in flex-1">
       <Hero>
-        <Eyebrow>{resource.format}</Eyebrow>
+        <Eyebrow>{resource.eyebrow}</Eyebrow>
 
         <h1 className="mt-5 font-mono text-4xl tracking-tight text-fg sm:text-5xl">
           {resource.title}

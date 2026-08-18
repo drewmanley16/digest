@@ -363,9 +363,11 @@ export const resources = {
     {
       slug: "system-design",
       title: "30 Days of Learning System Design",
+      // Sits above the title on the resource page, in place of the format tag.
+      eyebrow: "All the resources I used during my 30 day series",
       // TODO: swap for your own words if you want a different pitch
       blurb:
-        "My 30-day run at learning system design: what I studied each day, the resources worth your time, and the notes I took along the way.",
+        "Every link, video, and course I worked through, in the order I hit them, plus the notes I took along the way.",
       format: "Google Doc",
       urlEnv: "RESOURCE_URL_SYSTEM_DESIGN",
     },
