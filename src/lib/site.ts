@@ -326,7 +326,50 @@ export const mediaKit = {
     "Full audience numbers across every platform, plus the brands I've worked with. Figures refresh when I pitch. Ask if you need something more recent.",
 };
 
+/**
+ * Email-gated resources. The real file link never lives here — it would ship
+ * to the browser with the rest of this file. Each item names an env var
+ * (`urlEnv`) that holds the link; only lib/resources.server.ts reads it.
+ * Adding a resource = one entry here + one env var, locally and on Vercel.
+ */
+export const resources = {
+  eyebrow: "$ ls resources/",
+  headline: "Resources",
+  subhead:
+    "Guides and docs I've put together, free. Enter your email once and every one of them unlocks.",
+  indexLabel: "Available now",
+  gate: {
+    // TODO: make this yours — it is the whole pitch for handing over an email
+    support:
+      "Enter your email and it opens right up. You'll also get digest.md, my weekly email on AI news and tools. Free, one a week, unsubscribe anytime.",
+    placeholder: "you@example.com",
+    button: "Get access",
+    pendingButton: "Unlocking...",
+    error: "That didn't go through. Try again in a moment.",
+    invalidEmail: "Enter a valid email address.",
+  },
+  unlocked: {
+    note: "You're in. This stays unlocked on this device.",
+    button: "Open it →",
+  },
+  backLabel: "← All resources",
+  items: [
+    {
+      slug: "system-design",
+      title: "Drew's System Design Resources",
+      // TODO: your words — this is what makes someone hand over an email
+      blurb:
+        "The system design material I actually used to prep, collected in one place instead of scattered across twenty tabs.",
+      format: "Google Doc",
+      urlEnv: "RESOURCE_URL_SYSTEM_DESIGN",
+    },
+  ],
+} as const;
+
 export const footer = {
   wordmark: "digest.md",
+  // Resources is deliberately not in the top nav — a fourth item overflows the
+  // header on a narrow phone. Beacons links straight to /resources anyway.
+  links: [{ href: "/resources", label: "Resources" }],
   copyright: "© 2026 digest.md. All rights reserved.",
 };

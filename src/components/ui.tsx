@@ -54,13 +54,17 @@ export function Button({
   href,
   children,
   variant = "primary",
+  newTab = false,
 }: {
   href: string;
   children: ReactNode;
   variant?: keyof typeof buttonVariants;
+  newTab?: boolean;
 }) {
   const className = `${buttonBase} ${buttonVariants[variant]}`;
-  const isInternal = href.startsWith("/");
+  // newTab also opts out of <Link>: prefetching a route that redirects would
+  // fire the redirect before anyone clicked it.
+  const isInternal = href.startsWith("/") && !newTab;
 
   if (isInternal) {
     return (
@@ -71,7 +75,12 @@ export function Button({
   }
 
   return (
-    <a href={href} className={className}>
+    <a
+      href={href}
+      className={className}
+      target={newTab ? "_blank" : undefined}
+      rel={newTab ? "noopener noreferrer" : undefined}
+    >
       {children}
     </a>
   );

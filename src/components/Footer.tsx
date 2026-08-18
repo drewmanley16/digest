@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { footer, socials } from "@/lib/site";
 
 export function Footer() {
@@ -7,6 +8,17 @@ export function Footer() {
         <p className="font-mono text-base text-fg">{footer.wordmark}</p>
 
         <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-sm">
+          {footer.links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="text-muted transition-colors hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+
           {socials.map((social) => (
             <li key={social.label}>
               <a
