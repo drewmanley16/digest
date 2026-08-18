@@ -24,7 +24,10 @@ export function Nav() {
         <div className="flex items-center gap-4 sm:gap-8">
           <ul className="flex items-center gap-3.5 font-mono text-xs sm:gap-6 sm:text-sm">
             {nav.map((item) => {
-              const isActive = pathname === item.href;
+              // Sub-pages count as active too, so /resources/<slug> still
+              // highlights Resources.
+              const isActive =
+                pathname === item.href || pathname.startsWith(`${item.href}/`);
 
               return (
                 <li key={item.href}>

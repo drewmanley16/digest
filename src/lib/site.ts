@@ -3,10 +3,12 @@
  * Anything marked TODO is a placeholder — grep "TODO" to find what's left.
  */
 
+// No "Home" entry: the avatar + wordmark on the left already goes home, and a
+// fourth item overflows the header at 375px.
 export const nav = [
-  { href: "/", label: "Home" },
   { href: "/newsletter", label: "Newsletter" },
   { href: "/partnerships", label: "Partnerships" },
+  { href: "/resources", label: "Resources" },
 ] as const;
 
 // `icon` maps to a glyph in components/SocialIcons.tsx.
