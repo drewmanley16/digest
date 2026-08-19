@@ -130,10 +130,10 @@ export const partnerships = {
   profile: {
     categories: ["AI & Tech", "Developer Tools", "Education"],
     totalFollowersLabel: "Total followers",
-    // Instagram 3,123 + LinkedIn 2,379.
-    totalFollowers: "5,502",
+    // Instagram 3,954 + LinkedIn 2,379.
+    totalFollowers: "6,333",
     platforms: [
-      { icon: "instagram", label: "Instagram", value: "3,123" },
+      { icon: "instagram", label: "Instagram", value: "3,954" },
       { icon: "linkedin", label: "LinkedIn", value: "2,379" },
     ],
     ctaLabel: "View media kit →",
@@ -158,14 +158,14 @@ export const partnerships = {
       name: "Instagram",
       icon: "instagram",
       handle: "@drewisliving",
-      note: "21 Jul – 17 Aug 2026",
+      note: "20 Jul – 19 Aug 2026",
       metrics: [
-        { label: "Followers", value: "3,123" },
-        { label: "Views", value: "602K" },
-        { label: "Viewers", value: "252,675" },
-        { label: "Interactions", value: "39.4K" },
-        { label: "Profile visits", value: "10,831" },
-        { label: "Bio link taps", value: "1,164" },
+        { label: "Followers", value: "3,954" },
+        { label: "Views", value: "658,909" },
+        { label: "Viewers", value: "282,074" },
+        { label: "Interactions", value: "52,976" },
+        { label: "Accounts engaged", value: "28,882" },
+        { label: "Bio link taps", value: "1,192" },
       ],
     },
     {
@@ -301,7 +301,7 @@ export const partnerships = {
   reasonsLabel: "Why brands work with me",
   // TODO: confirm — the numeric claims must match the stats above
   reasons: [
-    "602K views and 252K viewers on Instagram in the last 30 days.",
+    "659K views and 282K viewers on Instagram in the last 30 days.",
     "Audience concentrated in the SF Bay Area, Portland, and NYC. 19% work in software development.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
