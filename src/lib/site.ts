@@ -27,12 +27,6 @@ export const socials = [
   },
 ] as const;
 
-export const beehiiv = {
-  formId: "3c1ed599-bf7b-4214-9cdc-75dd38816315",
-  loaderSrc: "https://subscribe-forms.beehiiv.com/v3/loader.js",
-  attributionSrc: "https://subscribe-forms.beehiiv.com/attribution.js",
-};
-
 export const profile = {
   name: "Drew",
   wordmark: "drew",
@@ -75,7 +69,6 @@ export const home = {
 };
 
 export const newsletter = {
-  eyebrow: "$ cat digest.md",
   headline: "digest.md",
   subhead: "Weekly AI news, new tools, and what I think about them.",
   byline: "Drew · CS @ University of Oregon · SWE at PayPal",
@@ -85,6 +78,17 @@ export const newsletter = {
   // Pulled live from beehiiv; see lib/beehiiv.server.ts.
   latestIssueLabel: "Latest issue",
   latestIssueCta: "Read it →",
+  // Our own form now; the beehiiv iframe is gone.
+  form: {
+    placeholder: "you@example.com",
+    button: "Join free",
+    pendingButton: "Joining...",
+    error: "That didn't go through. Try again in a moment.",
+    invalidEmail: "Enter a valid email address.",
+    doneTitle: "You're in.",
+    doneBody:
+      "Check your inbox for a hello from me. The next issue lands this week.",
+  },
   whyLabel: "// why this exists",
   // TODO: replace with real copy
   whyParagraphs: [
@@ -332,7 +336,6 @@ export const partnerships = {
 };
 
 export const mediaKit = {
-  eyebrow: "$ cat mediakit.md",
   headline: "Media kit",
   subhead:
     "Full audience numbers across every platform, plus the brands I've worked with. Figures refresh when I pitch. Ask if you need something more recent.",
@@ -345,7 +348,6 @@ export const mediaKit = {
  * Adding a resource = one entry here + one env var, locally and on Vercel.
  */
 export const resources = {
-  eyebrow: "$ ls resources/",
   headline: "Resources",
   subhead:
     "Everything I've put together, free. Enter your email once and every one of them unlocks.",

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { BeehiivEmbed } from "@/components/BeehiivEmbed";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { Faq } from "@/components/Faq";
 import { LatestIssue } from "@/components/LatestIssue";
-import { Eyebrow, Hero, Section } from "@/components/ui";
+import { Hero, Section } from "@/components/ui";
 import { latestPost } from "@/lib/beehiiv.server";
 import { newsletter } from "@/lib/site";
 
@@ -17,9 +17,7 @@ export default async function NewsletterPage() {
   return (
     <main className="fade-in flex-1">
       <Hero>
-        <Eyebrow>{newsletter.eyebrow}</Eyebrow>
-
-        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className=" font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {newsletter.headline}
         </h1>
 
@@ -30,7 +28,7 @@ export default async function NewsletterPage() {
         <p className="mt-4 font-sans text-sm text-muted">{newsletter.byline}</p>
 
         <div id="subscribe" className="mt-10 scroll-mt-24">
-          <BeehiivEmbed />
+          <SubscribeForm source="newsletter_page" className="max-w-[30rem]" />
           <p className="mt-4 font-sans text-sm text-muted">
             {newsletter.subscriberCount}
           </p>

@@ -1,6 +1,6 @@
 import { Avatar } from "@/components/Avatar";
 import { LatestIssue } from "@/components/LatestIssue";
-import { BeehiivEmbed } from "@/components/BeehiivEmbed";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { Letter } from "@/components/Letter";
 import { SocialIcon } from "@/components/SocialIcons";
 import { Button, Section } from "@/components/ui";
@@ -57,7 +57,11 @@ export default async function HomePage() {
               {home.subscribeSupport}
             </p>
 
-            <BeehiivEmbed />
+            <SubscribeForm
+              source="home_hero"
+              align="center"
+              className="max-w-[30rem]"
+            />
 
             <LatestIssue post={post} className="mt-10 w-full max-w-[34rem]" />
           </div>

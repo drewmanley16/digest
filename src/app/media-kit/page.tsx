@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BrandRow } from "@/components/BrandRow";
 import { PlatformStats } from "@/components/PlatformStats";
-import { Eyebrow, Hero, Label, Section } from "@/components/ui";
+import { Hero, Label, Section } from "@/components/ui";
 import { mediaKit, partnerships } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -23,9 +23,7 @@ export default function MediaKitPage() {
   return (
     <main className="fade-in flex-1">
       <Hero>
-        <Eyebrow>{mediaKit.eyebrow}</Eyebrow>
-
-        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className=" font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {mediaKit.headline}
         </h1>
 

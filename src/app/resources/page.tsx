@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Eyebrow, Hero, Label, Section } from "@/components/ui";
+import { Hero, Label, Section } from "@/components/ui";
 import { resources } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,9 +12,7 @@ export default function ResourcesPage() {
   return (
     <main className="fade-in flex-1">
       <Hero>
-        <Eyebrow>{resources.eyebrow}</Eyebrow>
-
-        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className=" font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {resources.headline}
         </h1>
 
