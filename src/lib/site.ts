@@ -408,11 +408,11 @@ export const resources = {
     {
       slug: "internship-list",
       title: "Internship list",
-      eyebrow: "The summer 2026 board I actually check",
+      eyebrow: "The internship board I actually check",
       noun: "list",
       // TODO: swap for your own words if you want a different pitch
       blurb:
-        "A running list of summer 2026 software internships with application links, updated as roles open and close.",
+        "A running list of software internships with application links, updated as roles open and close through the season.",
       format: "GitHub repo",
       urlEnv: "RESOURCE_URL_INTERNSHIP_LIST",
     },
