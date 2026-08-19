@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #17171a;
-  --color-fg: #f1efe8;
-  --color-accent: #97c459;
-  --color-muted: #8a8a92;
-  --color-line: #2a2a2f;
+  /* Sand and clay: warm off-white, warm charcoal, terracotta. */
+  --color-bg: #f7f4ef;
+  --color-fg: #241f1b;
+  /* Both are darkened from the first pass to clear WCAG AA (4.5:1) on the
+     light background: muted carries body copy, accent carries small links. */
+  --color-accent: #b0553a;
+  --color-muted: #756a61;
+  --color-line: #e6dfd4;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
@@ -71,7 +74,7 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   border: 0;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @media (prefers-reduced-motion: reduce) {

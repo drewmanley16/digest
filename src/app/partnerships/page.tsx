@@ -20,7 +20,7 @@ export default function PartnershipsPage() {
       <Hero>
         <Eyebrow>{partnerships.eyebrow}</Eyebrow>
 
-        <h1 className="mt-5 font-mono text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {partnerships.headline}
         </h1>
 
@@ -98,7 +98,7 @@ export default function PartnershipsPage() {
 
       <Section>
         <div className="border border-line p-6 sm:p-8">
-          <h2 className="font-mono text-2xl tracking-tight text-fg">
+          <h2 className="font-sans text-2xl tracking-tight text-fg">
             {partnerships.reasonsLabel}
           </h2>
 
@@ -127,7 +127,7 @@ export default function PartnershipsPage() {
       </Section>
 
       <Section>
-        <h2 className="font-mono text-2xl tracking-tight text-fg">
+        <h2 className="font-sans text-2xl tracking-tight text-fg">
           {partnerships.faqLabel}
         </h2>
 
@@ -137,7 +137,7 @@ export default function PartnershipsPage() {
       </Section>
 
       <Section>
-        <h2 className="font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+        <h2 className="font-sans text-2xl tracking-tight text-fg sm:text-3xl">
           {partnerships.closing.headline}
         </h2>
 

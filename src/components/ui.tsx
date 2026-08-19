@@ -43,7 +43,7 @@ export function Hero({ children }: { children: ReactNode }) {
 }
 
 const buttonBase =
-  "inline-flex items-center justify-center rounded-sm font-mono transition-colors";
+  "inline-flex items-center justify-center rounded-sm font-sans font-medium transition-colors";
 
 const buttonSizes = {
   default: "px-5 py-2.5 text-sm",

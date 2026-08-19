@@ -45,7 +45,7 @@ export default async function ResourcePage({
       <Hero>
         <Eyebrow>{resource.eyebrow}</Eyebrow>
 
-        <h1 className="mt-5 font-mono text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {resource.title}
         </h1>
 
@@ -59,7 +59,7 @@ export default async function ResourcePage({
           <div className="border border-accent p-6 sm:p-8">
             <Label>{resources.unlocked.label}</Label>
 
-            <h2 className="mt-4 font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+            <h2 className="mt-4 font-sans text-2xl tracking-tight text-fg sm:text-3xl">
               {resources.unlocked.heading}
             </h2>
 
@@ -77,7 +77,7 @@ export default async function ResourcePage({
               </Button>
             </div>
 
-            <p className="mt-4 font-mono text-xs text-muted">
+            <p className="mt-4 font-sans text-xs text-muted">
               {resources.unlocked.newTabNote}
             </p>
           </div>
@@ -85,7 +85,7 @@ export default async function ResourcePage({
           <div className="border border-line p-6 sm:p-8">
             <Label>{resources.gate.label}</Label>
 
-            <h2 className="mt-4 font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+            <h2 className="mt-4 font-sans text-2xl tracking-tight text-fg sm:text-3xl">
               {resources.gate.heading}
             </h2>
 
@@ -100,7 +100,7 @@ export default async function ResourcePage({
         <div className="mt-10">
           <Link
             href="/resources"
-            className="font-mono text-sm text-muted transition-colors hover:text-accent"
+            className="font-sans text-sm text-muted transition-colors hover:text-accent"
           >
             {resources.backLabel}
           </Link>

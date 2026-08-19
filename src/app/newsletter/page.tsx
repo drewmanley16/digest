@@ -19,7 +19,7 @@ export default async function NewsletterPage() {
       <Hero>
         <Eyebrow>{newsletter.eyebrow}</Eyebrow>
 
-        <h1 className="mt-5 font-mono text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {newsletter.headline}
         </h1>
 
@@ -27,11 +27,11 @@ export default async function NewsletterPage() {
           {newsletter.subhead}
         </p>
 
-        <p className="mt-4 font-mono text-sm text-muted">{newsletter.byline}</p>
+        <p className="mt-4 font-sans text-sm text-muted">{newsletter.byline}</p>
 
         <div id="subscribe" className="mt-10 scroll-mt-24">
           <BeehiivEmbed />
-          <p className="mt-4 font-mono text-sm text-muted">
+          <p className="mt-4 font-sans text-sm text-muted">
             {newsletter.subscriberCount}
           </p>
 
@@ -50,7 +50,7 @@ export default async function NewsletterPage() {
       </Section>
 
       <Section>
-        <h2 className="font-mono text-xl tracking-tight text-fg">Questions</h2>
+        <h2 className="font-sans text-xl tracking-tight text-fg">Questions</h2>
 
         <div className="mt-6">
           <Faq items={newsletter.faq} />

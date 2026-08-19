@@ -22,7 +22,7 @@ export function Nav() {
         </Link>
 
         <div className="flex items-center gap-4 sm:gap-8">
-          <ul className="flex items-center gap-3.5 font-mono text-xs sm:gap-6 sm:text-sm">
+          <ul className="flex items-center gap-3.5 font-sans text-sm sm:gap-6">
             {nav.map((item) => {
               // Sub-pages count as active too, so /resources/<slug> still
               // highlights Resources.
@@ -51,7 +51,7 @@ export function Nav() {
               links — the hero form sits right there anyway. */}
           <Link
             href="/newsletter#subscribe"
-            className="hidden rounded-sm bg-accent px-3.5 py-2 font-mono text-xs tracking-wide text-bg uppercase transition-colors hover:bg-accent/85 sm:inline-block"
+            className="hidden rounded-sm bg-accent px-3.5 py-2 font-sans text-xs font-medium tracking-wide text-bg uppercase transition-colors hover:bg-accent/85 sm:inline-block"
           >
             {profile.navCta}
           </Link>

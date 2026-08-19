@@ -16,11 +16,11 @@ export default async function HomePage() {
         <div className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
           <Avatar size={168} />
 
-          <h1 className="mt-8 font-mono text-3xl tracking-tight text-fg sm:text-5xl">
+          <h1 className="mt-8 font-sans text-3xl tracking-tight text-fg sm:text-5xl">
             {home.headline}
           </h1>
 
-          <p className="mt-4 font-mono text-sm text-muted">{home.byline}</p>
+          <p className="mt-4 font-sans text-sm text-muted">{home.byline}</p>
 
           <p className="mt-6 max-w-[52ch] leading-relaxed text-muted">
             {home.subhead}
@@ -50,7 +50,7 @@ export default async function HomePage() {
             id="subscribe"
             className="mt-12 flex w-full scroll-mt-24 flex-col items-center border-t border-line pt-12"
           >
-            <h2 className="font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+            <h2 className="font-sans text-2xl tracking-tight text-fg sm:text-3xl">
               {home.subscribeHeading}
             </h2>
             <p className="mt-3 mb-8 text-sm text-muted">
@@ -65,7 +65,7 @@ export default async function HomePage() {
       </section>
 
       <Section>
-        <h2 className="text-center font-mono text-2xl tracking-tight text-fg sm:text-3xl">
+        <h2 className="text-center font-sans text-2xl tracking-tight text-fg sm:text-3xl">
           {home.letter.heading}
         </h2>
 
@@ -74,7 +74,7 @@ export default async function HomePage() {
         </div>
 
         <div className="mt-12 flex flex-col items-center border-t border-line pt-12 text-center">
-          <h3 className="font-mono text-xl tracking-tight text-fg">
+          <h3 className="font-sans text-xl tracking-tight text-fg">
             {home.letterCta.heading}
           </h3>
 

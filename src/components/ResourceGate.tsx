@@ -28,13 +28,13 @@ export function ResourceGate({ slug, noun }: { slug: string; noun: string }) {
           autoComplete="email"
           placeholder={resources.gate.placeholder}
           aria-describedby={state.error ? "unlock-error" : undefined}
-          className="w-full rounded-sm border border-line bg-transparent px-4 py-2.5 font-mono text-sm text-fg placeholder:text-muted focus:border-accent focus:outline-none"
+          className="w-full rounded-sm border border-line bg-transparent px-4 py-2.5 font-sans text-sm text-fg placeholder:text-muted focus:border-accent focus:outline-none"
         />
 
         <button
           type="submit"
           disabled={pending}
-          className="shrink-0 rounded-sm bg-accent px-5 py-2.5 font-mono text-sm text-bg transition-colors hover:bg-accent/85 disabled:opacity-60"
+          className="shrink-0 rounded-sm bg-accent px-5 py-2.5 font-sans font-medium text-sm text-bg transition-colors hover:bg-accent/85 disabled:opacity-60"
         >
           {pending
             ? resources.gate.pendingButton
@@ -52,7 +52,7 @@ export function ResourceGate({ slug, noun }: { slug: string; noun: string }) {
         <p
           id="unlock-error"
           aria-live="polite"
-          className="mt-3 font-mono text-xs text-accent"
+          className="mt-3 font-sans text-xs text-accent"
         >
           {state.error}
         </p>

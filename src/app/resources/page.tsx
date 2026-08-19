@@ -14,7 +14,7 @@ export default function ResourcesPage() {
       <Hero>
         <Eyebrow>{resources.eyebrow}</Eyebrow>
 
-        <h1 className="mt-5 font-mono text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {resources.headline}
         </h1>
 
@@ -37,7 +37,7 @@ export default function ResourcesPage() {
                   {item.format}
                 </p>
 
-                <h2 className="mt-3 font-mono text-xl tracking-tight text-fg transition-colors group-hover:text-accent">
+                <h2 className="mt-3 font-sans text-xl tracking-tight text-fg transition-colors group-hover:text-accent">
                   {item.title}
                 </h2>
 

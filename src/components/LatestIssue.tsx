@@ -35,11 +35,11 @@ export function LatestIssue({
         {date ? ` · ${date}` : ""}
       </p>
 
-      <p className="mt-3 font-mono text-base text-fg transition-colors group-hover:text-accent">
+      <p className="mt-3 font-sans text-base text-fg transition-colors group-hover:text-accent">
         {post.title}
       </p>
 
-      <p className="mt-3 font-mono text-sm text-accent">
+      <p className="mt-3 font-sans text-sm text-accent">
         {newsletter.latestIssueCta}
       </p>
     </a>

@@ -25,7 +25,7 @@ export default function MediaKitPage() {
       <Hero>
         <Eyebrow>{mediaKit.eyebrow}</Eyebrow>
 
-        <h1 className="mt-5 font-mono text-4xl tracking-tight text-fg sm:text-5xl">
+        <h1 className="mt-5 font-sans text-4xl tracking-tight text-fg sm:text-5xl">
           {mediaKit.headline}
         </h1>
 

@@ -394,6 +394,28 @@ export const resources = {
       format: "GitHub repo",
       urlEnv: "RESOURCE_URL_TECH_OA",
     },
+    {
+      slug: "internship-email-list",
+      title: "Internship email list",
+      eyebrow: "New internship postings, straight to your inbox",
+      noun: "list",
+      // TODO: swap for your own words if you want a different pitch
+      blurb:
+        "Sign up once and new software internship postings land in your email as they go up, instead of you refreshing job boards.",
+      format: "Website",
+      urlEnv: "RESOURCE_URL_INTERNSHIP_EMAIL_LIST",
+    },
+    {
+      slug: "internship-list",
+      title: "Internship list",
+      eyebrow: "The summer 2026 board I actually check",
+      noun: "list",
+      // TODO: swap for your own words if you want a different pitch
+      blurb:
+        "A running list of summer 2026 software internships with application links, updated as roles open and close.",
+      format: "GitHub repo",
+      urlEnv: "RESOURCE_URL_INTERNSHIP_LIST",
+    },
   ],
 } as const;
 

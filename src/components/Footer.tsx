@@ -7,7 +7,7 @@ export function Footer() {
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-mono text-base text-fg">{footer.wordmark}</p>
 
-        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-sm">
+        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 font-sans text-sm">
           {footer.links.map((link) => (
             <li key={link.href}>
               <Link
@@ -34,7 +34,7 @@ export function Footer() {
         </ul>
       </div>
 
-      <p className="mx-auto mt-8 w-full max-w-3xl font-mono text-xs text-muted">
+      <p className="mx-auto mt-8 w-full max-w-3xl font-sans text-xs text-muted">
         {footer.copyright}
       </p>
     </footer>
