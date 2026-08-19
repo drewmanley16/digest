@@ -72,8 +72,9 @@ export const newsletter = {
   headline: "digest.md",
   subhead: "Weekly AI news, new tools, and what I think about them.",
   byline: "Drew · CS @ University of Oregon · SWE at PayPal",
-  // TODO: real subscriber count
-  subscriberCount: "Join X readers. Free, weekly, unsubscribe anytime.",
+  // Count-free on purpose. Add a number here once it flatters you (~500+);
+  // below that, a real number reads worse than no number.
+  subscriberCount: "Free, one email a week, unsubscribe anytime.",
   whyLabel: "// why this exists",
   // TODO: replace with real copy
   whyParagraphs: [
