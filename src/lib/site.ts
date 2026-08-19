@@ -65,6 +65,13 @@ export const home = {
     ],
     signoff: "Drew",
   },
+  // Anyone who read to the end of the letter is the warmest visitor on the
+  // site, and the only form was back at the top.
+  letterCta: {
+    heading: "Sound useful?",
+    body: "One email a week, about four minutes to read. Free, and you can leave whenever.",
+    button: "Join the newsletter →",
+  },
 };
 
 export const newsletter = {
@@ -75,6 +82,9 @@ export const newsletter = {
   // Count-free on purpose. Add a number here once it flatters you (~500+);
   // below that, a real number reads worse than no number.
   subscriberCount: "Free, one email a week, unsubscribe anytime.",
+  // Pulled live from beehiiv; see lib/beehiiv.server.ts.
+  latestIssueLabel: "Latest issue",
+  latestIssueCta: "Read it →",
   whyLabel: "// why this exists",
   // TODO: replace with real copy
   whyParagraphs: [
@@ -343,10 +353,11 @@ export const resources = {
   gate: {
     label: "// locked",
     heading: "Enter your email to unlock it",
+    // {noun} is filled from each item's `noun` field.
     support:
-      "Type your email below and the doc opens. You'll also get digest.md, my weekly email on AI news and tools. Free, one a week, unsubscribe anytime.",
+      "Type your email below and the {noun} opens. You'll also get digest.md, my weekly email on AI news and tools. Free, one a week, unsubscribe anytime.",
     placeholder: "you@example.com",
-    button: "Unlock the doc →",
+    button: "Unlock the {noun} →",
     pendingButton: "Unlocking...",
     error: "That didn't go through. Try again in a moment.",
     invalidEmail: "Enter a valid email address.",
@@ -355,7 +366,7 @@ export const resources = {
     label: "// unlocked",
     heading: "You're in",
     note: "Click below to open it. It stays unlocked on this device, so you can come back anytime.",
-    button: "Open the doc →",
+    button: "Open the {noun} →",
     newTabNote: "Opens in a new tab.",
   },
   backLabel: "← All resources",
@@ -365,11 +376,23 @@ export const resources = {
       title: "30 Days of Learning System Design",
       // Sits above the title on the resource page, in place of the format tag.
       eyebrow: "All the resources I used during my 30 day series",
+      noun: "doc",
       // TODO: swap for your own words if you want a different pitch
       blurb:
         "Every link, video, and course I worked through, in the order I hit them, plus the notes I took along the way.",
       format: "Google Doc",
       urlEnv: "RESOURCE_URL_SYSTEM_DESIGN",
+    },
+    {
+      slug: "tech-oa-questions",
+      title: "Tech OA & Interview Questions",
+      eyebrow: "The question bank I point people to",
+      noun: "repo",
+      // TODO: swap for your own words if you want a different pitch
+      blurb:
+        "Online assessment and interview questions from real company loops, sorted by company, so you can practice against what actually gets asked.",
+      format: "GitHub repo",
+      urlEnv: "RESOURCE_URL_TECH_OA",
     },
   ],
 } as const;

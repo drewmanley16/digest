@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { BeehiivEmbed } from "@/components/BeehiivEmbed";
 import { Faq } from "@/components/Faq";
+import { LatestIssue } from "@/components/LatestIssue";
 import { Eyebrow, Hero, Section } from "@/components/ui";
+import { latestPost } from "@/lib/beehiiv.server";
 import { newsletter } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
   description: newsletter.subhead,
 };
 
-export default function NewsletterPage() {
+export default async function NewsletterPage() {
+  const post = await latestPost();
+
   return (
     <main className="fade-in flex-1">
       <Hero>
@@ -30,6 +34,8 @@ export default function NewsletterPage() {
           <p className="mt-4 font-mono text-sm text-muted">
             {newsletter.subscriberCount}
           </p>
+
+          <LatestIssue post={post} className="mt-10 max-w-[34rem]" />
         </div>
       </Hero>
 

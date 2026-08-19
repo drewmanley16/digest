@@ -57,3 +57,50 @@ export async function subscribe(
     return false;
   }
 }
+
+export type LatestPost = {
+  title: string;
+  url: string;
+  publishedAt: number | null;
+};
+
+/**
+ * The most recent published issue, for the "read one before you subscribe"
+ * links. Revalidates hourly, so publishing on beehiiv updates the site without
+ * a deploy. Returns null on any failure: a missing link is a smaller problem
+ * than a page that will not render.
+ */
+export async function latestPost(): Promise<LatestPost | null> {
+  const apiKey = process.env.BEEHIIV_API_KEY;
+  const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
+
+  if (!apiKey || !publicationId) return null;
+
+  try {
+    const response = await fetch(
+      `https://api.beehiiv.com/v2/publications/${publicationId}/posts` +
+        "?limit=1&status=confirmed&order_by=publish_date&direction=desc",
+      {
+        headers: { Authorization: `Bearer ${apiKey}` },
+        next: { revalidate: 3600 },
+      },
+    );
+
+    if (!response.ok) {
+      console.error(`beehiiv: posts fetch failed (${response.status})`);
+      return null;
+    }
+
+    const post = (await response.json())?.data?.[0];
+    if (!post?.title || !post?.web_url) return null;
+
+    return {
+      title: post.title,
+      url: post.web_url,
+      publishedAt: post.publish_date ?? null,
+    };
+  } catch (error) {
+    console.error("beehiiv: posts fetch threw", error);
+    return null;
+  }
+}

@@ -6,7 +6,7 @@ import { resources } from "@/lib/site";
 
 const initialState: UnlockState = {};
 
-export function ResourceGate({ slug }: { slug: string }) {
+export function ResourceGate({ slug, noun }: { slug: string; noun: string }) {
   const unlockResource = unlock.bind(null, slug);
   const [state, formAction, pending] = useActionState(
     unlockResource,
@@ -36,7 +36,9 @@ export function ResourceGate({ slug }: { slug: string }) {
           disabled={pending}
           className="shrink-0 rounded-sm bg-accent px-5 py-2.5 font-mono text-sm text-bg transition-colors hover:bg-accent/85 disabled:opacity-60"
         >
-          {pending ? resources.gate.pendingButton : resources.gate.button}
+          {pending
+            ? resources.gate.pendingButton
+            : resources.gate.button.replace("{noun}", noun)}
         </button>
       </div>
 

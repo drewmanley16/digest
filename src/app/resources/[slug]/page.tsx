@@ -73,7 +73,7 @@ export default async function ResourcePage({
                 size="lg"
                 newTab
               >
-                {resources.unlocked.button}
+                {resources.unlocked.button.replace("{noun}", resource.noun)}
               </Button>
             </div>
 
@@ -90,10 +90,10 @@ export default async function ResourcePage({
             </h2>
 
             <p className="mt-4 max-w-[55ch] leading-relaxed text-muted">
-              {resources.gate.support}
+              {resources.gate.support.replace("{noun}", resource.noun)}
             </p>
 
-            <ResourceGate slug={resource.slug} />
+            <ResourceGate slug={resource.slug} noun={resource.noun} />
           </div>
         )}
 

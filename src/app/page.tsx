@@ -1,11 +1,15 @@
 import { Avatar } from "@/components/Avatar";
+import { LatestIssue } from "@/components/LatestIssue";
 import { BeehiivEmbed } from "@/components/BeehiivEmbed";
 import { Letter } from "@/components/Letter";
 import { SocialIcon } from "@/components/SocialIcons";
 import { Button, Section } from "@/components/ui";
+import { latestPost } from "@/lib/beehiiv.server";
 import { home, socials } from "@/lib/site";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const post = await latestPost();
+
   return (
     <main className="fade-in flex-1">
       <section className="px-5 pt-14 pb-16 sm:px-8 sm:pt-20 sm:pb-20">
@@ -54,6 +58,8 @@ export default function HomePage() {
             </p>
 
             <BeehiivEmbed />
+
+            <LatestIssue post={post} className="mt-10 w-full max-w-[34rem]" />
           </div>
         </div>
       </section>
@@ -65,6 +71,22 @@ export default function HomePage() {
 
         <div className="mt-10">
           <Letter />
+        </div>
+
+        <div className="mt-12 flex flex-col items-center border-t border-line pt-12 text-center">
+          <h3 className="font-mono text-xl tracking-tight text-fg">
+            {home.letterCta.heading}
+          </h3>
+
+          <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted">
+            {home.letterCta.body}
+          </p>
+
+          <div className="mt-7">
+            <Button href="#subscribe" size="lg">
+              {home.letterCta.button}
+            </Button>
+          </div>
         </div>
       </Section>
     </main>
