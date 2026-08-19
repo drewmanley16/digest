@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ResourceIcon } from "@/components/Icons";
 import { Hero, Label, Section } from "@/components/ui";
 import { resources } from "@/lib/site";
 
@@ -24,28 +25,33 @@ export default function ResourcesPage() {
       <Section>
         <Label>{resources.indexLabel}</Label>
 
-        <ul className="mt-8 space-y-4">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           {resources.items.map((item) => (
             <li key={item.slug}>
               <Link
                 href={`/resources/${item.slug}`}
-                className="group block border border-line p-6 transition-colors hover:border-accent"
+                className="group flex h-full flex-col border border-line p-6 transition-colors hover:border-accent"
               >
-                <p className="font-mono text-xs tracking-[0.14em] text-muted uppercase">
+                <span className="flex h-12 w-12 items-center justify-center border border-line text-accent transition-colors group-hover:border-accent">
+                  <ResourceIcon name={item.icon} />
+                </span>
+
+                <p className="mt-5 font-mono text-xs tracking-[0.14em] text-muted uppercase">
                   {item.format}
                 </p>
 
-                <h2 className="mt-3 font-sans text-xl tracking-tight text-fg transition-colors group-hover:text-accent">
+                <h2 className="mt-2 font-sans text-lg tracking-tight text-fg transition-colors group-hover:text-accent">
                   {item.title}
                 </h2>
 
-                <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-muted">
+                <p className="mt-3 text-sm leading-relaxed text-muted">
                   {item.blurb}
                 </p>
               </Link>
             </li>
           ))}
         </ul>
+
       </Section>
     </main>
   );

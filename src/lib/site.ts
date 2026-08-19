@@ -375,6 +375,7 @@ export const resources = {
   items: [
     {
       slug: "system-design",
+      icon: "layers",
       title: "30 Days of Learning System Design",
       // Sits above the title on the resource page, in place of the format tag.
       eyebrow: "All the resources I used during my 30 day series",
@@ -387,6 +388,7 @@ export const resources = {
     },
     {
       slug: "tech-oa-questions",
+      icon: "terminal",
       title: "Tech OA & Interview Questions",
       eyebrow: "The question bank I point people to",
       noun: "repo",
@@ -398,6 +400,7 @@ export const resources = {
     },
     {
       slug: "internship-email-list",
+      icon: "inbox",
       title: "Internship email list",
       eyebrow: "New internship postings, straight to your inbox",
       noun: "list",
@@ -409,6 +412,7 @@ export const resources = {
     },
     {
       slug: "internship-list",
+      icon: "checklist",
       title: "Internship list",
       eyebrow: "The internship board I actually check",
       noun: "list",
