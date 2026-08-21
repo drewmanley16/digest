@@ -351,7 +351,6 @@ export const resources = {
   headline: "Resources",
   subhead:
     "Everything I've put together, free. Enter your email once and every one of them unlocks.",
-  indexLabel: "Available now",
   gate: {
     label: "// locked",
     heading: "Enter your email to unlock it",
@@ -372,58 +371,115 @@ export const resources = {
     newTabNote: "Opens in a new tab.",
   },
   backLabel: "← All resources",
-  items: [
+  // Grouped by what you are trying to do, and ordered inside each group the
+  // way you would actually work through them.
+  groups: [
     {
-      slug: "system-design",
-      icon: "layers",
-      title: "30 Days of Learning System Design",
-      // Sits above the title on the resource page, in place of the format tag.
-      eyebrow: "All the resources I used during my 30 day series",
-      noun: "doc",
-      // TODO: swap for your own words if you want a different pitch
+      label: "LeetCode & interview prep",
       blurb:
-        "Every link, video, and course I worked through, in the order I hit them, plus the notes I took along the way.",
-      format: "Google Doc",
-      urlEnv: "RESOURCE_URL_SYSTEM_DESIGN",
+        "Learn the patterns, watch them move, then drill the questions companies actually ask.",
+      items: [
+        {
+          slug: "neetcode",
+          icon: "route",
+          title: "NeetCode",
+          eyebrow: "Where I'd start on LeetCode",
+          noun: "site",
+          blurb:
+            "A curated LeetCode roadmap grouped by pattern, with a video walkthrough for every problem. Beats grinding random questions.",
+          format: "Website",
+          urlEnv: "RESOURCE_URL_NEETCODE",
+        },
+        {
+          slug: "visualgo",
+          icon: "graph",
+          title: "VisuAlgo",
+          eyebrow: "Watch the data structures actually move",
+          noun: "site",
+          blurb:
+            "Animated data structures and algorithms. The fastest way to fix an intuition that will not click from reading code.",
+          format: "Website",
+          urlEnv: "RESOURCE_URL_VISUALGO",
+        },
+        {
+          slug: "mit-algorithms",
+          icon: "lecture",
+          title: "MIT 6.046J: Design and Analysis of Algorithms",
+          eyebrow: "The course under most interview questions",
+          noun: "course",
+          blurb:
+            "Full MIT lectures, notes, and problem sets, free. Where to go when you want the theory behind the patterns, not just the trick.",
+          format: "Course",
+          urlEnv: "RESOURCE_URL_MIT_ALGORITHMS",
+        },
+        {
+          slug: "tech-oa-questions",
+          icon: "terminal",
+          title: "Tech OA & Interview Questions",
+          eyebrow: "The question bank I point people to",
+          noun: "repo",
+          // TODO: swap for your own words if you want a different pitch
+          blurb:
+            "Online assessment and interview questions from real company loops, sorted by company, so you can practice against what actually gets asked.",
+          format: "GitHub repo",
+          urlEnv: "RESOURCE_URL_TECH_OA",
+        },
+        {
+          slug: "system-design",
+          icon: "layers",
+          title: "30 Days of Learning System Design",
+          // Sits above the title on the resource page, in place of the format tag.
+          eyebrow: "All the resources I used during my 30 day series",
+          noun: "doc",
+          // TODO: swap for your own words if you want a different pitch
+          blurb:
+            "Every link, video, and course I worked through, in the order I hit them, plus the notes I took along the way.",
+          format: "Google Doc",
+          urlEnv: "RESOURCE_URL_SYSTEM_DESIGN",
+        },
+      ],
     },
     {
-      slug: "tech-oa-questions",
-      icon: "terminal",
-      title: "Tech OA & Interview Questions",
-      eyebrow: "The question bank I point people to",
-      noun: "repo",
-      // TODO: swap for your own words if you want a different pitch
+      label: "Finding the job",
       blurb:
-        "Online assessment and interview questions from real company loops, sorted by company, so you can practice against what actually gets asked.",
-      format: "GitHub repo",
-      urlEnv: "RESOURCE_URL_TECH_OA",
-    },
-    {
-      slug: "internship-email-list",
-      icon: "inbox",
-      title: "Internship email list",
-      eyebrow: "New internship postings, straight to your inbox",
-      noun: "list",
-      // TODO: swap for your own words if you want a different pitch
-      blurb:
-        "Sign up once and new software internship postings land in your email as they go up, instead of you refreshing job boards.",
-      format: "Website",
-      urlEnv: "RESOURCE_URL_INTERNSHIP_EMAIL_LIST",
-    },
-    {
-      slug: "internship-list",
-      icon: "checklist",
-      title: "Internship list",
-      eyebrow: "The internship board I actually check",
-      noun: "list",
-      // TODO: swap for your own words if you want a different pitch
-      blurb:
-        "A running list of software internships with application links, updated as roles open and close through the season.",
-      format: "GitHub repo",
-      urlEnv: "RESOURCE_URL_INTERNSHIP_LIST",
+        "Practice is worth nothing if you never see the posting. These two cover the pipeline.",
+      items: [
+        {
+          slug: "internship-email-list",
+          icon: "inbox",
+          title: "Internship email list",
+          eyebrow: "New internship postings, straight to your inbox",
+          noun: "list",
+          // TODO: swap for your own words if you want a different pitch
+          blurb:
+            "Sign up once and new software internship postings land in your email as they go up, instead of you refreshing job boards.",
+          format: "Website",
+          urlEnv: "RESOURCE_URL_INTERNSHIP_EMAIL_LIST",
+        },
+        {
+          slug: "internship-list",
+          icon: "checklist",
+          title: "Internship list",
+          eyebrow: "The internship board I actually check",
+          noun: "list",
+          // TODO: swap for your own words if you want a different pitch
+          blurb:
+            "A running list of software internships with application links, updated as roles open and close through the season.",
+          format: "GitHub repo",
+          urlEnv: "RESOURCE_URL_INTERNSHIP_LIST",
+        },
+      ],
     },
   ],
 } as const;
+
+// Flat view for slug lookups and static params. The groups above are the
+// single source of truth; nothing should list a resource twice.
+export type ResourceItem = (typeof resources.groups)[number]["items"][number];
+
+export const resourceItems: readonly ResourceItem[] = resources.groups.flatMap(
+  (group) => [...group.items],
+);
 
 export const footer = {
   wordmark: "digest.md",

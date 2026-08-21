@@ -22,37 +22,43 @@ export default function ResourcesPage() {
         </p>
       </Hero>
 
-      <Section>
-        <Label>{resources.indexLabel}</Label>
+      {resources.groups.map((group) => (
+        <Section key={group.label}>
+          <Label>{group.label}</Label>
 
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-          {resources.items.map((item) => (
-            <li key={item.slug}>
-              <Link
-                href={`/resources/${item.slug}`}
-                className="group flex h-full flex-col border border-line p-6 transition-colors hover:border-accent"
-              >
-                <span className="flex h-12 w-12 items-center justify-center border border-line text-accent transition-colors group-hover:border-accent">
-                  <ResourceIcon name={item.icon} />
-                </span>
+          <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-muted">
+            {group.blurb}
+          </p>
 
-                <p className="mt-5 font-mono text-xs tracking-[0.14em] text-muted uppercase">
-                  {item.format}
-                </p>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            {group.items.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  href={`/resources/${item.slug}`}
+                  className="group flex h-full flex-col border border-line p-6 transition-colors hover:border-accent"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center border border-line text-accent transition-colors group-hover:border-accent">
+                    <ResourceIcon name={item.icon} />
+                  </span>
 
-                <h2 className="mt-2 font-sans text-lg tracking-tight text-fg transition-colors group-hover:text-accent">
-                  {item.title}
-                </h2>
+                  <p className="mt-5 font-mono text-xs tracking-[0.14em] text-muted uppercase">
+                    {item.format}
+                  </p>
 
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {item.blurb}
-                </p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                  <h2 className="mt-2 font-sans text-lg tracking-tight text-fg transition-colors group-hover:text-accent">
+                    {item.title}
+                  </h2>
 
-      </Section>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {item.blurb}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ))}
+
     </main>
   );
 }

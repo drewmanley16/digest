@@ -39,6 +39,15 @@ const resourcePaths: Record<string, string[]> = {
   layers: ["m12 3 9 5-9 5-9-5 9-5Z", "m3 12 9 5 9-5", "m3 16 9 5 9-5"],
   terminal: ["M3 4h18v16H3z", "m7 9 3 3-3 3", "M13 15h4"],
   inbox: ["M3 6h18v12H3z", "m3 7 9 6 9-6"],
+  route: ["M6 4h6a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h10", "M4 4h4v4H4z", "M16 16h4v4h-4z"],
+  graph: [
+    "M6 5h4v4H6z",
+    "M14 15h4v4h-4z",
+    "M4 15h4v4H4z",
+    "M8 9v3h8v3",
+    "M8 12H6v3",
+  ],
+  lecture: ["M3 5h18v11H3z", "m10 8 5 2.5-5 2.5V8Z", "M8 20h8"],
   checklist: [
     "M8 3h8v3H8z",
     "M8 4.5H5V21h14V4.5h-3",

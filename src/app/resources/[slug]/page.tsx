@@ -9,10 +9,10 @@ import {
   isUnlockToken,
   unlockCookieName,
 } from "@/lib/resources.server";
-import { resources } from "@/lib/site";
+import { resourceItems, resources } from "@/lib/site";
 
 export function generateStaticParams() {
-  return resources.items.map((item) => ({ slug: item.slug }));
+  return resourceItems.map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({

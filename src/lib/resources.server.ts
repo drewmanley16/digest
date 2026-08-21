@@ -1,6 +1,6 @@
 import "server-only";
 import { createHmac, timingSafeEqual } from "node:crypto";
-import { resources } from "@/lib/site";
+import { resourceItems } from "@/lib/site";
 
 /**
  * Server-only half of the resource gate. Two things live here that must never
@@ -8,10 +8,10 @@ import { resources } from "@/lib/site";
  * secret used to sign the unlock cookie.
  */
 
-export type Resource = (typeof resources.items)[number];
+export type Resource = (typeof resourceItems)[number];
 
 export function findResource(slug: string): Resource | undefined {
-  return resources.items.find((item) => item.slug === slug);
+  return resourceItems.find((item) => item.slug === slug);
 }
 
 export function resourceUrl(resource: Resource): string | undefined {
