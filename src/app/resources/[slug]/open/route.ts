@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import {
   findResource,
   isUnlockToken,
-  resourceUrl,
+  resourceLinks,
   unlockCookieName,
 } from "@/lib/resources.server";
 
@@ -13,7 +13,7 @@ import {
  * already unlocked. They land on it, they do not get handed it.
  */
 export async function GET(
-  _request: Request,
+  request: Request,
   context: RouteContext<"/resources/[slug]/open">,
 ) {
   const { slug } = await context.params;
@@ -24,8 +24,13 @@ export async function GET(
   const token = (await cookies()).get(unlockCookieName)?.value;
   if (!isUnlockToken(token)) redirect(`/resources/${slug}`);
 
-  const url = resourceUrl(resource);
-  if (!url) redirect(`/resources/${slug}`);
+  // ?link=<index> picks one of a bundle. Anything out of range falls back to
+  // the gate rather than guessing which link was meant.
+  const links = resourceLinks(resource);
+  const index = Number(new URL(request.url).searchParams.get("link") ?? "0");
+  const link = Number.isInteger(index) ? links[index] : undefined;
 
-  redirect(url);
+  if (!link) redirect(`/resources/${slug}`);
+
+  redirect(link.url);
 }

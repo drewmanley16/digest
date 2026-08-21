@@ -7,12 +7,13 @@ import { Button, Eyebrow, Hero, Label, Section } from "@/components/ui";
 import {
   findResource,
   isUnlockToken,
+  resourceLinks,
   unlockCookieName,
 } from "@/lib/resources.server";
-import { resourceItems, resources } from "@/lib/site";
+import { resources } from "@/lib/site";
 
 export function generateStaticParams() {
-  return resourceItems.map((item) => ({ slug: item.slug }));
+  return resources.items.map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({
@@ -39,6 +40,8 @@ export default async function ResourcePage({
 
   // One unlock covers every resource — see lib/resources.server.ts.
   const unlocked = isUnlockToken((await cookies()).get(unlockCookieName)?.value);
+  const links = resourceLinks(resource);
+  const bundled = links.length > 1;
 
   return (
     <main className="fade-in flex-1">
@@ -64,18 +67,48 @@ export default async function ResourcePage({
             </h2>
 
             <p className="mt-4 max-w-[55ch] leading-relaxed text-muted">
-              {resources.unlocked.note}
+              {bundled ? resources.unlocked.multiNote : resources.unlocked.note}
             </p>
 
-            <div className="mt-7">
-              <Button
-                href={`/resources/${resource.slug}/open`}
-                size="lg"
-                newTab
-              >
-                {resources.unlocked.button.replace("{noun}", resource.noun)}
-              </Button>
-            </div>
+            {bundled ? (
+              <ul className="mt-7 space-y-3">
+                {links.map((link, index) => (
+                  <li key={link.url}>
+                    <a
+                      href={`/resources/${resource.slug}/open?link=${index}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-baseline gap-4 border border-line p-5 transition-colors hover:border-accent"
+                    >
+                      <span className="font-mono text-xs text-muted">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="flex-1">
+                        <span className="block font-sans text-base text-fg transition-colors group-hover:text-accent">
+                          {link.label} →
+                        </span>
+                        {link.note && (
+                          <span className="mt-1 block text-sm leading-relaxed text-muted">
+                            {link.note}
+                          </span>
+                        )}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className="mt-7">
+                <Button
+                  href={`/resources/${resource.slug}/open`}
+                  size="lg"
+                  newTab
+                >
+                  {resources.unlocked.button.replace("{noun}", resource.noun)}
+                </Button>
+              </div>
+            )}
 
             <p className="mt-4 font-sans text-xs text-muted">
               {resources.unlocked.newTabNote}

@@ -1,6 +1,6 @@
 import "server-only";
 import { createHmac, timingSafeEqual } from "node:crypto";
-import { resourceItems } from "@/lib/site";
+import { resources } from "@/lib/site";
 
 /**
  * Server-only half of the resource gate. Two things live here that must never
@@ -8,14 +8,23 @@ import { resourceItems } from "@/lib/site";
  * secret used to sign the unlock cookie.
  */
 
-export type Resource = (typeof resourceItems)[number];
+export type Resource = (typeof resources.items)[number];
 
 export function findResource(slug: string): Resource | undefined {
-  return resourceItems.find((item) => item.slug === slug);
+  return resources.items.find((item) => item.slug === slug);
 }
 
-export function resourceUrl(resource: Resource): string | undefined {
-  return process.env[resource.urlEnv];
+export type ResourceLink = { label: string; note: string; url: string };
+
+/**
+ * The links whose env var is actually set. A resource with a missing env var
+ * drops that link rather than rendering a dead button.
+ */
+export function resourceLinks(resource: Resource): ResourceLink[] {
+  return resource.links.flatMap((link) => {
+    const url = process.env[link.urlEnv];
+    return url ? [{ label: link.label, note: link.note, url }] : [];
+  });
 }
 
 export const unlockCookieName = "digest_unlocked";
