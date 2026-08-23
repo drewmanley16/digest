@@ -47,6 +47,7 @@ const resourcePaths: Record<string, string[]> = {
     "M8 9v3h8v3",
     "M8 12H6v3",
   ],
+  interview: ["M3 5h18v11H9l-4 4v-4H3z", "M8 10h1", "M12 10h1", "M16 10h1"],
   lecture: ["M3 5h18v11H3z", "m10 8 5 2.5-5 2.5V8Z", "M8 20h8"],
   checklist: [
     "M8 3h8v3H8z",

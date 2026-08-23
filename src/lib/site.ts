@@ -425,6 +425,33 @@ export const resources = {
       ],
     },
     {
+      slug: "tech-interview-prep",
+      icon: "interview",
+      title: "Tech interview prep",
+      eyebrow: "What I read before a loop",
+      noun: "guide",
+      blurb:
+        "How the loop actually works, what to drill, and what specific companies ask. The three I keep open in tabs during prep season.",
+      format: "3 links",
+      links: [
+        {
+          label: "Hello Interview",
+          note: "Writeups on how interviews are really scored, from people who ran the loops at big tech.",
+          urlEnv: "RESOURCE_URL_HELLO_INTERVIEW",
+        },
+        {
+          label: "NeetCode",
+          note: "The pattern roadmap for the coding round, with a video walkthrough for every problem.",
+          urlEnv: "RESOURCE_URL_NEETCODE",
+        },
+        {
+          label: "Tech OA & Interview Questions",
+          note: "Real online assessment questions sorted by company, for when you know where you are applying.",
+          urlEnv: "RESOURCE_URL_TECH_OA",
+        },
+      ],
+    },
+    {
       slug: "tech-oa-questions",
       icon: "terminal",
       title: "Tech OA & Interview Questions",
