@@ -125,16 +125,16 @@ export const partnerships = {
   subhead:
     "I make short-form video and write a weekly newsletter about AI tools and news. The audience is mostly engineers, students, and early-career technical people who try new tools first.",
   // Instagram figures from the professional dashboard, LinkedIn from the
-  // aggregate analytics export. Window: 21 Jul - 17 Aug 2026.
-  // Refresh both before pitching; the window label lives on each block.
+  // aggregate analytics export. Refresh both before pitching; the window label
+  // lives on each block.
   profile: {
     categories: ["AI & Tech", "Developer Tools", "Education"],
     totalFollowersLabel: "Total followers",
-    // Instagram 3,954 + LinkedIn 2,379.
-    totalFollowers: "6,333",
+    // Instagram 5,733 + LinkedIn 2,895.
+    totalFollowers: "8,628",
     platforms: [
-      { icon: "instagram", label: "Instagram", value: "3,954" },
-      { icon: "linkedin", label: "LinkedIn", value: "2,379" },
+      { icon: "instagram", label: "Instagram", value: "5,733" },
+      { icon: "linkedin", label: "LinkedIn", value: "2,895" },
     ],
     ctaLabel: "View media kit →",
     aboutLabel: "About me",
@@ -148,38 +148,37 @@ export const partnerships = {
   brands: [
     { name: "Higgsfield AI", logo: "/brands/higgsfield.png" as string | null },
     { name: "Devmaxx", logo: "/brands/devmaxx.png" as string | null },
+    { name: "Jobright", logo: "/brands/jobright.jpeg" as string | null },
+    { name: "Fish Audio", logo: "/brands/fish-audio.jpeg" as string | null },
   ],
 
-  statsWindow: "21 Jul – 17 Aug 2026",
-
-  // One block per platform, same card grid for each.
   platformStats: [
     {
       name: "Instagram",
       icon: "instagram",
       handle: "@drewisliving",
-      note: "20 Jul – 19 Aug 2026",
+      note: "Last 30 days",
       metrics: [
-        { label: "Followers", value: "3,954" },
-        { label: "Views", value: "658,909" },
-        { label: "Viewers", value: "282,074" },
-        { label: "Interactions", value: "52,976" },
-        { label: "Accounts engaged", value: "28,882" },
-        { label: "Bio link taps", value: "1,192" },
+        { label: "Followers", value: "5,733" },
+        { label: "Views", value: "1,032,857" },
+        { label: "Viewers", value: "409,551" },
+        { label: "Interactions", value: "100,047" },
+        { label: "Accounts engaged", value: "52,852" },
+        { label: "Profile activity", value: "14,567" },
+        { label: "Profile visits", value: "12,947" },
+        { label: "External link taps", value: "1,620" },
       ],
     },
     {
       name: "LinkedIn",
       icon: "linkedin",
       handle: "drewmanley",
-      note: "21 Jul – 17 Aug 2026",
+      note: "Last 90 days · to 3 Sep 2026",
       metrics: [
-        { label: "Followers", value: "2,379" },
-        { label: "Impressions", value: "54,137" },
-        { label: "Members reached", value: "29,013" },
-        { label: "Engagements", value: "931" },
-        { label: "Engagement rate", value: "1.7%" },
-        { label: "New followers", value: "+203" },
+        { label: "Followers", value: "2,895" },
+        { label: "Impressions", value: "319,865" },
+        { label: "Members reached", value: "152,387" },
+        { label: "Out-of-network reach", value: "92%" },
       ],
     },
   ],
@@ -301,11 +300,11 @@ export const partnerships = {
   reasonsLabel: "Why brands work with me",
   // TODO: confirm — the numeric claims must match the stats above
   reasons: [
-    "659K views and 282K viewers on Instagram in the last 30 days.",
+    "864K views and 365K viewers on Instagram in the last 30 days.",
     "Audience concentrated in the SF Bay Area, Portland, and NYC. 19% work in software development.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
-    "Trusted by AI startups like Higgsfield AI and Devmaxx.",
+    "Trusted by teams like Higgsfield AI, Devmaxx, Jobright, and Fish Audio.",
     "Clear reporting on reach, engagement, and clicks after every campaign, straight from platform analytics.",
   ],
   faqLabel: "Questions brands ask",
@@ -336,9 +335,95 @@ export const partnerships = {
 };
 
 export const mediaKit = {
-  headline: "Media kit",
+  eyebrow: "media kit",
+  headline:
+    "AI, CS, and tech-career content for students and early-career engineers.",
   subhead:
-    "Full audience numbers across every platform, plus the brands I've worked with. Figures refresh when I pitch. Ask if you need something more recent.",
+    "I run @drewisliving, where I make short-form videos about AI, CS, software engineering, tech careers, recruiting, and student opportunities. The account is at 5.7K+ followers and did over 1M views in the last 30 days.",
+  updatedLabel: "Updated September 2026",
+  primaryCta: "Email Drew",
+  secondaryCta: "Partnership options",
+  snapshotLabel: "Snapshot",
+  snapshot: [
+    { label: "Instagram followers", value: "5.7K+" },
+    { label: "LinkedIn impressions", value: "319,865" },
+    { label: "30-day views", value: "1,032,857" },
+    { label: "30-day interactions", value: "100,047" },
+    { label: "Accounts engaged", value: "52,852" },
+    { label: "External link taps", value: "1,620" },
+  ],
+  audienceLabel: "Audience",
+  audienceIntro:
+    "The audience is made up of students, early-career engineers, AI builders, and technical job seekers who are actively trying tools, applying to roles, and building projects.",
+  audienceHighlights: [
+    "87.1% of Instagram followers are 18-34.",
+    "40.0% United States and 23.4% India on Instagram.",
+    "LinkedIn audience clusters in the SF Bay Area, Eugene/Portland, NYC, LA, and Austin.",
+    "Top LinkedIn industry is software development, followed by technology and internet.",
+  ],
+  sponsorFitLabel: "Best-fit sponsors",
+  sponsorFit: [
+    "AI developer tools",
+    "Coding platforms",
+    "Interview prep and career platforms",
+    "Developer infrastructure and APIs",
+    "Student productivity and education tools",
+    "AI hardware and wearables",
+  ],
+  contentProofLabel: "Recent content proof",
+  contentProof: [
+    {
+      title: "SWE prep resource Reel",
+      metric: "168K views",
+      videoSrc: null as string | null,
+      posterSrc: null as string | null,
+      href: null as string | null,
+      detail:
+        "A direct student pain-point hook tied to a practical resource people could comment for.",
+    },
+    {
+      title: "Student career advice Reel",
+      metric: "114K views",
+      videoSrc: null as string | null,
+      posterSrc: null as string | null,
+      href: null as string | null,
+      detail:
+        "Advice-first format that translated a recruiting problem into a simple next step.",
+    },
+    {
+      title: "Technical interview Reel",
+      metric: "67.4K views",
+      videoSrc: null as string | null,
+      posterSrc: null as string | null,
+      href: null as string | null,
+      detail:
+        "Interview prep framed around what candidates should do differently right now.",
+    },
+    {
+      title: "Internship recruiting Reel",
+      metric: "40.7K views",
+      videoSrc: null as string | null,
+      posterSrc: null as string | null,
+      href: null as string | null,
+      detail:
+        "Timely internship-season content built for saves, shares, and comments.",
+    },
+  ],
+  formatsLabel: "Partnership formats",
+  processLabel: "Working process",
+  process: [
+    "Brief alignment and campaign goal",
+    "Script approval before filming",
+    "Filming and editing by Drew",
+    "One revision round before posting",
+    "Post-campaign analytics report",
+  ],
+  ratesNote:
+    "Campaigns are quoted based on deliverables, timeline, usage rights, exclusivity, revision expectations, and reporting needs.",
+  contactLabel: "Contact",
+  contactHeadline: "Want to put your product in front of technical students?",
+  contactBody:
+    "Send over what you're building, the campaign window, target deliverables, usage needs, and whether there is creator budget available. I'll reply with a scoped partnership option.",
 };
 
 /**
@@ -452,6 +537,33 @@ export const resources = {
       ],
     },
     {
+      slug: "swe-interview-stack",
+      icon: "interview",
+      title: "SWE interview stack",
+      eyebrow: "The three resources I would use first",
+      noun: "guide",
+      blurb:
+        "Most SWE loops come down to coding, system design, and behavioral. These are the three resources I would start with before overcomplicating prep.",
+      format: "3 links",
+      links: [
+        {
+          label: "Hello Interview",
+          note: "System design explained by ex-Meta engineers, with the concepts and expectations interviewers actually care about.",
+          urlEnv: "RESOURCE_URL_HELLO_INTERVIEW",
+        },
+        {
+          label: "NeetCode",
+          note: "The clearest roadmap for LeetCode patterns, with walkthroughs for hundreds of coding interview problems.",
+          urlEnv: "RESOURCE_URL_NEETCODE",
+        },
+        {
+          label: "Austin McDonald behavioral prep",
+          note: "Behavioral interview advice from a former Meta hiring committee chair on what interviewers are looking for.",
+          urlEnv: "RESOURCE_URL_BEHAVIORAL_INTERVIEW",
+        },
+      ],
+    },
+    {
       slug: "tech-oa-questions",
       icon: "terminal",
       title: "Tech OA & Interview Questions",
@@ -486,6 +598,79 @@ export const resources = {
           urlEnv: "RESOURCE_URL_INTERNSHIP_EMAIL_LIST",
         },
       ],
+    },
+    {
+      slug: "internship-outreach-template",
+      icon: "inbox",
+      title: "Internship outreach template",
+      eyebrow: "A cleaner cold message for finding roles before they post",
+      noun: "template",
+      blurb:
+        "A copy-ready DM/email framework for reaching recruiters, founders, and employees without sounding stiff or desperate.",
+      format: "Template",
+      links: [],
+      document: {
+        intro:
+          "Use this when someone posts that their team is hiring, when you find a recruiter, or when you want a warm pointer into a company.",
+        template: {
+          title: "Template",
+          body: [
+            "Hi [Name],",
+            "",
+            "I saw [specific signal: your post / the team’s work / an open role] and wanted to reach out. I’m a [year/major/background] interested in [specific area], and I’ve been building [short proof point].",
+            "",
+            "I was wondering if there are any upcoming internship opportunities on [team/company], or if there’s someone you’d recommend I connect with to learn more.",
+            "",
+            "Either way, I’d really appreciate any direction. Thanks!",
+            "",
+            "[Your name]",
+          ],
+        },
+        examples: [
+          {
+            title: "Zendesk internships",
+            body: [
+              "Hi [Name],",
+              "",
+              "I saw your message about Zendesk hiring and wanted to reach out. I’m currently a college student passionate about AI and building products that make technical work easier.",
+              "",
+              "I was wondering if there might be any upcoming internship opportunities, or if you could point me toward someone on the team I could connect with to learn more.",
+              "",
+              "Either way, I’d appreciate any direction. Thanks!",
+              "",
+              "Drew",
+            ],
+          },
+          {
+            title: "Recruiter follow-up",
+            body: [
+              "Hi [Name],",
+              "",
+              "I came across your profile while looking into internship opportunities at [Company]. I’m a CS student focused on AI and full-stack engineering, and I’ve been building projects around [specific project/area].",
+              "",
+              "Are there any upcoming software engineering internship roles I should keep an eye on, or is there a better person on the recruiting team to reach out to?",
+              "",
+              "Thanks for any help.",
+              "",
+              "[Your name]",
+            ],
+          },
+          {
+            title: "Engineer referral ask",
+            body: [
+              "Hi [Name],",
+              "",
+              "I saw your work on [team/product/project] at [Company] and thought it looked really interesting. I’m a [year] studying CS and I’ve been building [short relevant project], so your team stood out to me.",
+              "",
+              "If internship roles are opening soon, would you be open to pointing me toward the right application or someone I could talk to about the team?",
+              "",
+              "Really appreciate it.",
+              "",
+              "[Your name]",
+            ],
+          },
+        ],
+      },
     },
     {
       slug: "internship-list",

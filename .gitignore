@@ -44,3 +44,6 @@ next-env.d.ts
 
 # Raw source photo — the optimized crop is public/avatar.jpg
 /public/drew_headshot.JPG
+
+# Private partnership research and outreach drafts — never publish (public repo)
+/partnerships/

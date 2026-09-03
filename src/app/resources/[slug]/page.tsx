@@ -41,6 +41,7 @@ export default async function ResourcePage({
   // One unlock covers every resource — see lib/resources.server.ts.
   const unlocked = isUnlockToken((await cookies()).get(unlockCookieName)?.value);
   const links = resourceLinks(resource);
+  const document = "document" in resource ? resource.document : undefined;
   const bundled = links.length > 1;
 
   return (
@@ -58,7 +59,41 @@ export default async function ResourcePage({
       </Hero>
 
       <Section>
-        {unlocked ? (
+        {unlocked && document ? (
+          <div className="border border-accent p-6 sm:p-8">
+            <Label>{resources.unlocked.label}</Label>
+
+            <h2 className="mt-4 font-sans text-2xl tracking-tight text-fg sm:text-3xl">
+              {resources.unlocked.heading}
+            </h2>
+
+            <p className="mt-4 max-w-[55ch] leading-relaxed text-muted">
+              {document.intro}
+            </p>
+
+            <div className="mt-8 space-y-8">
+              <article>
+                <h3 className="font-mono text-sm text-fg">
+                  {document.template.title}
+                </h3>
+                <pre className="mt-4 overflow-x-auto whitespace-pre-wrap border border-line p-5 font-sans text-sm leading-relaxed text-muted">
+                  {document.template.body.join("\n")}
+                </pre>
+              </article>
+
+              {document.examples.map((example, index) => (
+                <article key={example.title}>
+                  <h3 className="font-mono text-sm text-fg">
+                    {String(index + 1).padStart(2, "0")} {example.title}
+                  </h3>
+                  <pre className="mt-4 overflow-x-auto whitespace-pre-wrap border border-line p-5 font-sans text-sm leading-relaxed text-muted">
+                    {example.body.join("\n")}
+                  </pre>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : unlocked ? (
           <div className="border border-accent p-6 sm:p-8">
             <Label>{resources.unlocked.label}</Label>
 
