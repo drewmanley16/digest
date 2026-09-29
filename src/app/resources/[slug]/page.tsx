@@ -42,6 +42,7 @@ export default async function ResourcePage({
   const unlocked = isUnlockToken((await cookies()).get(unlockCookieName)?.value);
   const links = resourceLinks(resource);
   const document = "document" in resource ? resource.document : undefined;
+  const projects = "projects" in resource ? resource.projects : undefined;
   const bundled = links.length > 1;
 
   return (
@@ -89,6 +90,63 @@ export default async function ResourcePage({
                   <pre className="mt-4 overflow-x-auto whitespace-pre-wrap border border-line p-5 font-sans text-sm leading-relaxed text-muted">
                     {example.body.join("\n")}
                   </pre>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : unlocked && projects ? (
+          <div className="border border-accent p-6 sm:p-8">
+            <Label>{resources.unlocked.label}</Label>
+
+            <h2 className="mt-4 font-sans text-2xl tracking-tight text-fg sm:text-3xl">
+              {resources.unlocked.heading}
+            </h2>
+
+            <p className="mt-4 max-w-[55ch] leading-relaxed text-muted">
+              {projects.intro}
+            </p>
+
+            <div className="mt-8 space-y-6">
+              {projects.items.map((project, index) => (
+                <article key={project.title} className="border border-line p-5 sm:p-6">
+                  <h3 className="font-sans text-lg tracking-tight text-fg">
+                    <span className="mr-3 font-mono text-xs text-muted">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    {project.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {project.pitch}
+                  </p>
+
+                  <p className="mt-6 font-mono text-xs tracking-[0.14em] text-fg uppercase">
+                    What to build
+                  </p>
+                  <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted">
+                    {project.build.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ol>
+
+                  <p className="mt-6 font-mono text-xs tracking-[0.14em] text-fg uppercase">
+                    Tech stack
+                  </p>
+                  <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[8rem_1fr]">
+                    {project.stack.map((row) => (
+                      <div key={row.label} className="contents">
+                        <dt className="font-mono text-xs leading-relaxed text-fg sm:text-sm">
+                          {row.label}
+                        </dt>
+                        <dd className="leading-relaxed text-muted">{row.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  <p className="mt-6 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted">
+                    <span className="font-medium text-fg">Bonus: </span>
+                    {project.bonus}
+                  </p>
                 </article>
               ))}
             </div>

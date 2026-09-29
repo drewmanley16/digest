@@ -464,6 +464,120 @@ export const resources = {
   // several render as a list, which is how one card can hold a whole guide.
   items: [
     {
+      slug: "premier-league-projects",
+      icon: "pitch",
+      title: "Premier League coding projects",
+      eyebrow: "5 resume-worthy projects for football fans",
+      noun: "project list",
+      blurb:
+        "The three from the video plus two more, each written out with what to build, the tech stack, and the extra step that makes it stand out in an interview.",
+      format: "5 projects",
+      links: [],
+      projects: {
+        intro:
+          "Pick one and actually ship it. A deployed project with real users (even ten mates in your FPL league) beats five half-finished repos. Each one below lists where to get the data, what to build, a stack that fits, and the bonus that turns it into a good interview story.",
+        items: [
+          {
+            title: "Premier League match predictor",
+            pitch:
+              "Predict win, draw, or loss for every upcoming fixture, then put it online so people can make their own picks against your model.",
+            build: [
+              "Pull historical results and betting odds from football-data.co.uk, and team xG from Understat or FBref.",
+              "Engineer features per fixture: rolling form over the last 5 and 10 games, home and away splits, xG for and against, rest days, and injured or suspended starters.",
+              "Train a baseline (logistic regression) first, then a gradient-boosted model, and judge both on log loss and accuracy against the bookmakers' implied probabilities.",
+              "Serve predictions through an API and build a site where users log in, lock in picks before kickoff, and see a leaderboard of humans vs the model.",
+            ],
+            stack: [
+              { label: "Data", value: "Python, pandas, football-data.co.uk, Understat" },
+              { label: "Model", value: "scikit-learn, XGBoost" },
+              { label: "Backend", value: "FastAPI, Postgres" },
+              { label: "Frontend", value: "Next.js, deployed on Vercel" },
+              { label: "Jobs", value: "Weekly cron to pull new results and retrain" },
+            ],
+            bonus:
+              "Track how well the model is calibrated over the season and show it publicly. \"My model beat 70% of users\" is a much better interview line than \"I got 55% accuracy\".",
+          },
+          {
+            title: "Fantasy Premier League AI assistant",
+            pitch:
+              "Plug in your FPL team ID and get transfer, captain, and lineup recommendations that fit your budget, with an AI agent explaining every call.",
+            build: [
+              "Use the public FPL API (bootstrap-static for players and prices, fixtures for difficulty, entry/{id} for a user's squad).",
+              "Build an expected points model per player per gameweek from form, minutes, fixture difficulty, and xG and xA.",
+              "Pick the best XI and transfers with an optimizer that respects the real rules: budget, 3 players per club, formation limits, and the -4 hit for extra transfers.",
+              "Add an LLM agent with tools (get squad, get projections, run optimizer) that explains its reasoning and answers follow-ups like \"should I wildcard?\".",
+            ],
+            stack: [
+              { label: "Data", value: "FPL API, Python, pandas" },
+              { label: "Optimizer", value: "PuLP (linear programming)" },
+              { label: "AI", value: "Claude or OpenAI with tool calling, Vercel AI SDK" },
+              { label: "App", value: "Next.js, Postgres for caching gameweek data" },
+            ],
+            bonus:
+              "Backtest it: replay last season week by week and report the total points your assistant would have scored. That one number carries the whole project.",
+          },
+          {
+            title: "Live Premier League analytics dashboard",
+            pitch:
+              "Watch possession, shots, xG, player stats, momentum, and the live league table update while games are actually being played.",
+            build: [
+              "Poll a live football API (API-Football or football-data.org both have free tiers) on a schedule during match windows.",
+              "Normalize events into your own schema and store them, so you only hit the API once no matter how many people are watching.",
+              "Push updates to the browser over WebSockets or Server-Sent Events, and recompute the \"as it stands\" table on every goal.",
+              "Chart xG timelines and a momentum graph per match, plus a player view with live ratings.",
+            ],
+            stack: [
+              { label: "Ingestion", value: "Node or Python worker, Redis for pub/sub" },
+              { label: "Storage", value: "Postgres (or TimescaleDB for match events)" },
+              { label: "Realtime", value: "WebSockets or Server-Sent Events" },
+              { label: "Frontend", value: "Next.js, Recharts or D3" },
+            ],
+            bonus:
+              "Send push notifications for goals, and generate a post-match summary with an LLM straight from the stored event data.",
+          },
+          {
+            title: "Transfer scout: find the cheaper version of any player",
+            pitch:
+              "Type in a player, like \"Declan Rice\", and get back statistically similar players who cost a fraction of the price, with a breakdown of exactly why they match.",
+            build: [
+              "Scrape per-90 stats for players across Europe's top leagues from FBref, and market values from Transfermarkt.",
+              "Build a feature vector per player by position: progressive passes, tackles, xG, xA, pressures, and so on. Normalize everything within each position group.",
+              "Find similar players with cosine similarity or k-nearest neighbors, then filter by age, league, and max transfer value.",
+              "Show results as radar charts that compare the target against each suggestion, plus a short AI-written scouting report for each player.",
+            ],
+            stack: [
+              { label: "Data", value: "Python, BeautifulSoup or soccerdata, pandas" },
+              { label: "Similarity", value: "scikit-learn (PCA plus nearest neighbors) or Postgres with pgvector" },
+              { label: "Backend", value: "FastAPI" },
+              { label: "Frontend", value: "Next.js, Recharts radar charts" },
+            ],
+            bonus:
+              "Validate it against reality. Look up players who actually got big moves last summer and check whether your model had them in the top 10 a year earlier.",
+          },
+          {
+            title: "Ask the Prem: a natural-language stats agent",
+            pitch:
+              "A chat interface where you can ask things like \"which team has scored the most goals after the 80th minute this season?\" and get a correct answer with a chart.",
+            build: [
+              "Load a few seasons of match and event data into Postgres (StatsBomb open data, FBref, or your data from project 3).",
+              "Give an LLM your schema and a tool that runs SQL through a read-only database user, so it can query but never modify or drop anything.",
+              "Have it pick a chart type and return the data, then render the chart next to the written answer and show the SQL it ran.",
+              "Write an eval set of around 50 questions with known answers, and track accuracy every time you change the prompt or model.",
+            ],
+            stack: [
+              { label: "Data", value: "Postgres, StatsBomb open data or FBref" },
+              { label: "AI", value: "Claude or OpenAI with tool calling, Vercel AI SDK" },
+              { label: "App", value: "Next.js with streaming responses" },
+              { label: "Charts", value: "Recharts" },
+              { label: "Evals", value: "A simple test script, or Braintrust or promptfoo" },
+            ],
+            bonus:
+              "The eval set is the real resume line. \"I built an eval suite and took text-to-SQL accuracy from 62% to 91%\" is exactly what AI teams hire for right now.",
+          },
+        ],
+      },
+    },
+    {
       slug: "system-design",
       icon: "layers",
       title: "30 Days of Learning System Design",
