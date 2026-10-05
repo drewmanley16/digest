@@ -43,6 +43,7 @@ export default async function ResourcePage({
   const links = resourceLinks(resource);
   const document = "document" in resource ? resource.document : undefined;
   const projects = "projects" in resource ? resource.projects : undefined;
+  const tracks = "tracks" in resource ? resource.tracks : undefined;
   const bundled = links.length > 1;
 
   return (
@@ -148,6 +149,52 @@ export default async function ResourcePage({
                     {project.bonus}
                   </p>
                 </article>
+              ))}
+            </div>
+          </div>
+        ) : unlocked && tracks ? (
+          <div className="border border-accent p-6 sm:p-8">
+            <Label>{resources.unlocked.label}</Label>
+
+            <h2 className="mt-4 font-sans text-2xl tracking-tight text-fg sm:text-3xl">
+              {resources.unlocked.heading}
+            </h2>
+
+            <p className="mt-4 max-w-[55ch] leading-relaxed text-muted">
+              {tracks.intro}
+            </p>
+
+            <div className="mt-10 space-y-10">
+              {tracks.items.map((track) => (
+                <section key={track.major}>
+                  <p className="font-mono text-xs tracking-[0.14em] text-fg uppercase">
+                    {track.major}
+                  </p>
+
+                  <div className="mt-4 space-y-4">
+                    {track.projects.map((project, index) => (
+                      <article key={project.title} className="border border-line p-5 sm:p-6">
+                        <h3 className="font-sans text-lg tracking-tight text-fg">
+                          <span className="mr-3 font-mono text-xs text-muted">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          {project.title}
+                        </h3>
+
+                        <p className="mt-3 text-sm leading-relaxed text-muted">
+                          {project.pitch}
+                        </p>
+
+                        <p className="mt-4 text-sm leading-relaxed text-muted">
+                          <span className="font-mono text-xs tracking-[0.14em] text-fg uppercase">
+                            Stack{" "}
+                          </span>
+                          {project.stack}
+                        </p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
               ))}
             </div>
           </div>

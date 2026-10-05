@@ -464,6 +464,138 @@ export const resources = {
   // several render as a list, which is how one card can hold a whole guide.
   items: [
     {
+      slug: "projects-by-major",
+      icon: "tracks",
+      title: "Projects by major",
+      eyebrow: "What to build based on what you're studying",
+      noun: "project list",
+      blurb:
+        "Three projects each for econ, AI, CS, data science, and security, with a one-line pitch and the tech stack to build it with.",
+      format: "15 projects",
+      links: [],
+      tracks: {
+        intro:
+          "The best project is one that sounds like your major. A recruiter reading an econ resume wants to see data and markets; a security team wants to see you've broken something on purpose. Pick the one that excites you most and ship it end to end.",
+        items: [
+          {
+            major: "Economics",
+            projects: [
+              {
+                title: "Recession probability dashboard",
+                pitch:
+                  "Pull the yield curve, unemployment, and jobless claims from FRED, fit a probit model, and chart the odds of a recession over the next 12 months, updated weekly.",
+                stack: "Python, pandas, statsmodels, FRED API, Streamlit",
+              },
+              {
+                title: "Fed speech sentiment tracker",
+                pitch:
+                  "Score every FOMC statement and Fed speech as hawkish or dovish with an LLM, then test whether the score moves 2-year Treasury yields on release day.",
+                stack: "Python, BeautifulSoup, Claude or OpenAI API, pandas, Plotly",
+              },
+              {
+                title: "Rent vs buy calculator for real cities",
+                pitch:
+                  "Use Zillow and Census data to show, city by city, how many years it takes for buying to beat renting, with sliders for mortgage rates and appreciation.",
+                stack: "Next.js, TypeScript, Postgres, Zillow Research data, Recharts",
+              },
+            ],
+          },
+          {
+            major: "AI",
+            projects: [
+              {
+                title: "Chat with your syllabus",
+                pitch:
+                  "Upload course PDFs and lecture notes, then ask questions and get answers that cite the exact page they came from. Grade it with an eval set of real exam questions.",
+                stack: "Next.js, Vercel AI SDK, Claude or OpenAI, Postgres with pgvector",
+              },
+              {
+                title: "Agent that applies to internships",
+                pitch:
+                  "An agent that reads a job posting, tailors your resume bullets to it, drafts the cover note, and fills the form, pausing for your approval before submitting.",
+                stack: "Python or TypeScript, Claude tool calling, Playwright, SQLite",
+              },
+              {
+                title: "Fine-tuned small model vs a frontier model",
+                pitch:
+                  "Fine-tune a small open model on one narrow task (like classifying support tickets), then publish a cost, speed, and accuracy comparison against a frontier API.",
+                stack: "Python, Hugging Face Transformers, LoRA, Modal or Colab, Weights & Biases",
+              },
+            ],
+          },
+          {
+            major: "Computer Science",
+            projects: [
+              {
+                title: "Build your own key-value database",
+                pitch:
+                  "A persistent key-value store with a write-ahead log, crash recovery, and a TCP server that speaks the Redis protocol, so real Redis clients can talk to it.",
+                stack: "Go or Rust, TCP sockets, benchmarks with redis-benchmark",
+              },
+              {
+                title: "Real-time collaborative editor",
+                pitch:
+                  "Google Docs-style editing where several people type in the same doc at once without overwriting each other, using CRDTs to merge changes.",
+                stack: "TypeScript, Yjs, WebSockets, Next.js, Redis",
+              },
+              {
+                title: "Mini container runtime",
+                pitch:
+                  "Run a process in its own isolated filesystem, process tree, and network using Linux namespaces and cgroups. A small Docker you actually understand.",
+                stack: "Go or C, Linux namespaces, cgroups, chroot",
+              },
+            ],
+          },
+          {
+            major: "Data Science",
+            projects: [
+              {
+                title: "Spotify listening habits analysis",
+                pitch:
+                  "Request your full Spotify data export, cluster your listening into moods by time of day and season, and build a model that predicts what you'll skip.",
+                stack: "Python, pandas, scikit-learn, Spotify Web API, Plotly",
+              },
+              {
+                title: "NYC rideshare demand forecaster",
+                pitch:
+                  "Forecast hourly pickups by neighborhood from the public NYC taxi and rideshare trip data, factoring in weather and holidays, and map the predictions.",
+                stack: "Python, DuckDB, LightGBM, Prophet, Kepler.gl or Streamlit",
+              },
+              {
+                title: "A/B test analyzer",
+                pitch:
+                  "Upload experiment results and get the lift, confidence interval, required sample size, and a plain-English verdict, with both frequentist and Bayesian views.",
+                stack: "Python, SciPy, PyMC, FastAPI, Next.js",
+              },
+            ],
+          },
+          {
+            major: "Security",
+            projects: [
+              {
+                title: "Home network intrusion detector",
+                pitch:
+                  "Capture traffic on your own network, learn what normal looks like, and flag anomalies like port scans or a device phoning home somewhere new.",
+                stack: "Python, Scapy, Zeek, scikit-learn (Isolation Forest), Grafana",
+              },
+              {
+                title: "Phishing URL classifier extension",
+                pitch:
+                  "A browser extension that scores links before you click, using URL features, domain age, and certificate data, and explains why it flagged each one.",
+                stack: "JavaScript, Chrome Extensions API, Python, XGBoost, FastAPI",
+              },
+              {
+                title: "Vulnerable app plus the writeup",
+                pitch:
+                  "Build a small web app with deliberate SQL injection, XSS, and broken auth, exploit each one, then patch it and publish the before and after as a writeup.",
+                stack: "Node.js, Express, SQLite, Burp Suite, OWASP ZAP",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
       slug: "premier-league-projects",
       icon: "pitch",
       title: "Premier League coding projects",

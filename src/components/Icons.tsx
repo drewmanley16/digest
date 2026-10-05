@@ -56,6 +56,7 @@ const resourcePaths: Record<string, string[]> = {
     "M3 9h3v6H3",
     "M21 9h-3v6h3",
   ],
+  tracks: ["M3 3h7v7H3z", "M14 3h7v7h-7z", "M3 14h7v7H3z", "M14 14h7v7h-7z"],
   checklist: [
     "M8 3h8v3H8z",
     "M8 4.5H5V21h14V4.5h-3",
