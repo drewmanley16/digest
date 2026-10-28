@@ -464,6 +464,38 @@ export const resources = {
   // several render as a list, which is how one card can hold a whole guide.
   items: [
     {
+      slug: "learn-ml-in-a-week",
+      icon: "lecture",
+      title: "Learn ML in a week",
+      eyebrow: "How I would learn machine learning in a week",
+      noun: "guide",
+      blurb:
+        "Foundations, then practical exercises, then building a real model, in that order. Plus Microsoft's beginner curriculum for hands-on projects.",
+      format: "4 links",
+      links: [
+        {
+          label: "Andrew Ng, Machine Learning Specialization",
+          note: "Start here. The foundations: regression, classification, and how models actually learn.",
+          urlEnv: "RESOURCE_URL_ANDREW_NG_ML",
+        },
+        {
+          label: "Google Machine Learning Crash Course",
+          note: "Practical exercises to turn the theory into something you can run.",
+          urlEnv: "RESOURCE_URL_GOOGLE_ML_CRASH_COURSE",
+        },
+        {
+          label: "fast.ai, Practical Deep Learning for Coders",
+          note: "Build a real model, top down, with working code from the first lesson.",
+          urlEnv: "RESOURCE_URL_FAST_AI",
+        },
+        {
+          label: "ML-For-Beginners",
+          note: "Microsoft's beginner ML curriculum with hands-on lessons and projects in Python and scikit-learn, starting with regression and classification.",
+          urlEnv: "RESOURCE_URL_ML_FOR_BEGINNERS",
+        },
+      ],
+    },
+    {
       slug: "projects-by-major",
       icon: "tracks",
       title: "Projects by major",
