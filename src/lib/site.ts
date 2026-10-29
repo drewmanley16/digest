@@ -130,11 +130,11 @@ export const partnerships = {
   profile: {
     categories: ["AI & Tech", "Developer Tools", "Education"],
     totalFollowersLabel: "Total followers",
-    // Instagram 5,733 + LinkedIn 2,895.
-    totalFollowers: "8,628",
+    // Instagram 7,148 + LinkedIn 3,281.
+    totalFollowers: "10,429",
     platforms: [
-      { icon: "instagram", label: "Instagram", value: "5,733" },
-      { icon: "linkedin", label: "LinkedIn", value: "2,895" },
+      { icon: "instagram", label: "Instagram", value: "7,148" },
+      { icon: "linkedin", label: "LinkedIn", value: "3,281" },
     ],
     ctaLabel: "View media kit →",
     aboutLabel: "About me",
@@ -159,14 +159,14 @@ export const partnerships = {
       handle: "@drewisliving",
       note: "Last 30 days",
       metrics: [
-        { label: "Followers", value: "5,733" },
-        { label: "Views", value: "1,032,857" },
-        { label: "Viewers", value: "409,551" },
-        { label: "Interactions", value: "100,047" },
-        { label: "Accounts engaged", value: "52,852" },
-        { label: "Profile activity", value: "14,567" },
-        { label: "Profile visits", value: "12,947" },
-        { label: "External link taps", value: "1,620" },
+        { label: "Followers", value: "7,148" },
+        { label: "Views", value: "366,670" },
+        { label: "Viewers", value: "218,223" },
+        { label: "Interactions", value: "34,929" },
+        { label: "Accounts engaged", value: "23,185" },
+        { label: "Profile activity", value: "3,661" },
+        { label: "Profile visits", value: "3,398" },
+        { label: "External link taps", value: "263" },
       ],
     },
     {
@@ -175,7 +175,7 @@ export const partnerships = {
       handle: "drewmanley",
       note: "Last 90 days · to 3 Sep 2026",
       metrics: [
-        { label: "Followers", value: "2,895" },
+        { label: "Followers", value: "3,281" },
         { label: "Impressions", value: "319,865" },
         { label: "Members reached", value: "152,387" },
         { label: "Out-of-network reach", value: "92%" },
@@ -300,7 +300,7 @@ export const partnerships = {
   reasonsLabel: "Why brands work with me",
   // TODO: confirm — the numeric claims must match the stats above
   reasons: [
-    "864K views and 365K viewers on Instagram in the last 30 days.",
+    "366K views and 218K viewers on Instagram in the last 30 days.",
     "Audience concentrated in the SF Bay Area, Portland, and NYC. 19% work in software development.",
     "I only take partnerships for products I'd use myself.",
     "Scripting, filming, and editing handled end to end.",
@@ -339,18 +339,18 @@ export const mediaKit = {
   headline:
     "AI, CS, and tech-career content for students and early-career engineers.",
   subhead:
-    "I run @drewisliving, where I make short-form videos about AI, CS, software engineering, tech careers, recruiting, and student opportunities. The account is at 5.7K+ followers and did over 1M views in the last 30 days.",
-  updatedLabel: "Updated September 2026",
+    "I run @drewisliving, where I make short-form videos about AI, CS, software engineering, tech careers, recruiting, and student opportunities. The account is at 7.1K+ followers and did over 366K views in the last 30 days.",
+  updatedLabel: "Updated October 2026",
   primaryCta: "Email Drew",
   secondaryCta: "Partnership options",
   snapshotLabel: "Snapshot",
   snapshot: [
-    { label: "Instagram followers", value: "5.7K+" },
+    { label: "Instagram followers", value: "7.1K+" },
     { label: "LinkedIn impressions", value: "319,865" },
-    { label: "30-day views", value: "1,032,857" },
-    { label: "30-day interactions", value: "100,047" },
-    { label: "Accounts engaged", value: "52,852" },
-    { label: "External link taps", value: "1,620" },
+    { label: "30-day views", value: "366,670" },
+    { label: "30-day interactions", value: "34,929" },
+    { label: "Accounts engaged", value: "23,185" },
+    { label: "External link taps", value: "263" },
   ],
   audienceLabel: "Audience",
   audienceIntro:
